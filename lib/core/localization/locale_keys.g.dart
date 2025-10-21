@@ -10,5 +10,6 @@ abstract class  LocaleKeys {
   static const bottom_nav_inbox = 'bottom_nav.inbox';
   static const bottom_nav_profile = 'bottom_nav.profile';
   static const bottom_nav = 'bottom_nav';
+  static const search_hint = 'search_hint';
 
 }
