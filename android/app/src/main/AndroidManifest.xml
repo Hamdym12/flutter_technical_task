@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="perfect_touch_task"
+        android:label="flutter_technical_task"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,0 +1,10 @@
+{
+  "app_title": "Lave Scape",
+  "bottom_nav": {
+    "explore": "استكشاف",
+    "reservation": "الحجوزات",
+    "wishlist": "المفضلة",
+    "inbox": "الرسائل",
+    "profile": "الملف الشخصي"
+  }
+}

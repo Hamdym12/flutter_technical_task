@@ -1,6 +1,6 @@
 {
-    "name": "perfect_touch_task",
-    "short_name": "perfect_touch_task",
+    "name": "flutter_technical_task",
+    "short_name": "flutter_technical_task",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

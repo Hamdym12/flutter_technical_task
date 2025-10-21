@@ -1,4 +1,4 @@
-name: perfect_touch_task
+name: flutter_technical_task
 description: "A new Flutter project."
 
 publish_to: 'none'
@@ -25,6 +25,8 @@ dependencies:
   fluttertoast: ^8.2.12
   # routing
   auto_route: ^10.2.0
+  # localization
+  easy_localization: ^3.0.8
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +39,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/translations/
+
+scripts: # this script is used to generate the locale keys for translations
+  gen:locales:
+    run: flutter pub run easy_localization:generate -S "assets/translations" -O "lib/core/localization" -o "locale_keys.g.dart" -f keys
+
 
 
 

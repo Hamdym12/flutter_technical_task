@@ -10,7 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:perfect_touch_task/features/splash/presentation/screens/splash_screen.dart'
+import 'package:flutter_technical_task/features/splash/presentation/screens/splash_screen.dart'
     as _i1;
 
 /// generated route for

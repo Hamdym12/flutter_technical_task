@@ -1,23 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'core/di/service_locater.dart';
-import 'core/routing/app_router.dart';
-import 'core/theming/app_theme.dart';
+import 'package:flutter_technical_task/core/app/main_app.dart';
+import 'package:flutter_technical_task/core/di/service_locater.dart';
+import 'package:flutter_technical_task/core/localization/easy_localization_config.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupDependencyInjection();
-  await FlutterLocalization.instance.ensureInitialized();
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+
+  runApp(const EasyLocalizationConfig(child: MainApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: getIt<AppRouter>().config(),
-      title: 'Lave Scape',
-      theme: AppTheme.defaultTheme(),
-    );
-  }
-}
