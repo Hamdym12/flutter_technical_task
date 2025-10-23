@@ -18,5 +18,6 @@ abstract class  LocaleKeys {
   static const categories_food_tours = 'categories.food_tours';
   static const categories_henna_art = 'categories.henna_art';
   static const categories = 'categories';
+  static const per_person = 'per_person';
 
 }

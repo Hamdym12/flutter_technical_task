@@ -1,5 +1,6 @@
 abstract class AppAssets{
   static const _svgIconsPath = "assets/icons/svg";
+  static const _pngImagesPath = "assets/images/pngs";
 
   /// AppBar Icons
   static const searchSVG = "$_svgIconsPath/search.svg";
@@ -21,4 +22,9 @@ abstract class AppAssets{
   static const foodToursSvg = "$_svgIconsPath/food_tours.svg";
   static const hennaArtSvg = "$_svgIconsPath/henna_art.svg";
 
+  /// Explore Screen
+  static const camelDesertRidingPng = "$_pngImagesPath/camel_desert_riding.png";
+  static const mapPinSvg = "$_svgIconsPath/map_pin.svg";
+  static const heartSvg = "$_svgIconsPath/heart.svg";
+  static const starSvg = "$_svgIconsPath/star.svg";
 }

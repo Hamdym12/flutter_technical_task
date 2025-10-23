@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
+import 'package:flutter_technical_task/core/constants/app_radius.dart';
 import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
@@ -24,7 +25,6 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       cursorColor: AppColors.placeHolder,
       cursorHeight: 18.sp,
       cursorRadius: const Radius.circular(0),
@@ -43,8 +43,8 @@ class SearchTextField extends StatelessWidget {
         hintStyle: AppTextStyles.font15PlaceHolder500,
         prefixIconConstraints: BoxConstraints(maxWidth: 30.w),
         prefixIcon: Padding(
-          padding: const EdgeInsetsDirectional.all(12).copyWith(
-            end: 6,
+          padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w).copyWith(
+            end: 6.w
           ),
           child: SvgPicture.asset(
             AppAssets.searchSVG
@@ -56,8 +56,8 @@ class SearchTextField extends StatelessWidget {
             decoration: const BoxDecoration(
               color:  AppColors.grey50,
               borderRadius: BorderRadiusDirectional.only(
-                topEnd: Radius.circular(8),
-                bottomEnd: Radius.circular(8),
+                topEnd: Radius.circular(AppRadius.basicFormInput),
+                bottomEnd: Radius.circular(AppRadius.basicFormInput),
               ),
             ),
             child: Padding(
@@ -68,7 +68,7 @@ class SearchTextField extends StatelessWidget {
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppRadius.basicFormInput),
           borderSide: BorderSide.none,
         ),
       ),

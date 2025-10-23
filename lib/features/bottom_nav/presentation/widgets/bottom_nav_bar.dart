@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_technical_task/core/constants/app_shadows.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/features/bottom_nav/data/models/bottom_nav_bar_model.dart';
@@ -14,14 +15,7 @@ class BottomNavBar extends StatelessWidget {
     final item = BottomNavBarModel.items;
     return Container(
       decoration: const BoxDecoration(
-       boxShadow: [
-         BoxShadow(
-             offset: Offset(0, 10),
-             blurRadius: 40,
-             spreadRadius: 10,
-             color: AppColors.shadowBlack
-         )
-       ],
+       boxShadow: AppShadows.boxShadowMd,
        border: Border(
            top: BorderSide(color: AppColors.superLightGrey)
        )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
+import 'package:flutter_technical_task/core/constants/app_insets.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/core/widgets/search_text_field.dart';
@@ -17,7 +18,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: false,
       automaticallyImplyLeading: false,
-      actionsPadding: EdgeInsetsDirectional.only(end: 20.w),
+      actionsPadding: AppInsets.pageHorizontal.copyWith(start: 0),
       actions:[
        Badge(
         largeSize: 14.h,
@@ -39,5 +40,5 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight+6.h);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight+10.h);
 }

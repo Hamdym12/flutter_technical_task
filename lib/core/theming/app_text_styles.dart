@@ -39,4 +39,28 @@ abstract class AppTextStyles{
     color: AppColors.primaryPurple600,
   );
 
+  static const baseMedium = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textBlack
+  );
+
+  static const regularSM = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: AppColors.gray700
+  );
+
+  static const boldLG = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      color: AppColors.textBlack
+  );
+
+  static const font12TextBlack400 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    color: AppColors.textBlack,
+  );
+
 }
