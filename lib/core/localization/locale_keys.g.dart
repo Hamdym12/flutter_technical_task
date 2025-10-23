@@ -11,5 +11,12 @@ abstract class  LocaleKeys {
   static const bottom_nav_profile = 'bottom_nav.profile';
   static const bottom_nav = 'bottom_nav';
   static const search_hint = 'search_hint';
+  static const categories_camel_riding = 'categories.camel_riding';
+  static const categories_coffee_brewing = 'categories.coffee_brewing';
+  static const categories_cooking_class = 'categories.cooking_class';
+  static const categories_flexible = 'categories.flexible';
+  static const categories_food_tours = 'categories.food_tours';
+  static const categories_henna_art = 'categories.henna_art';
+  static const categories = 'categories';
 
 }

@@ -7,5 +7,13 @@
     "inbox": "الرسائل",
     "profile": "الملف الشخصي"
   },
-  "search_hint": "البحث"
+  "search_hint": "البحث",
+  "categories": {
+    "camel_riding": "ركوب الجمال",
+    "coffee_brewing": "تحضير القهوة",
+    "cooking_class": "دروس الطبخ",
+    "flexible": "مرن",
+    "food_tours": "جولات الطعام",
+    "henna_art": "فن الحناء"
+  }
 }

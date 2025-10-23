@@ -16,7 +16,6 @@ class BottomNavScreen extends StatelessWidget {
       valueListenable: valueNotifier,
       builder: (context,value,child) {
         return Scaffold(
-          appBar: const SearchAppBar(),
           body: PageTransitionSwitcher(
             duration: const Duration(milliseconds: 300),
             transitionBuilder: (Widget child,Animation<double> animation,

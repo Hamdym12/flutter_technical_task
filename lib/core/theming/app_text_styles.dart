@@ -11,7 +11,13 @@ abstract class AppTextStyles{
 
   static const font15PlaceHolder500 = TextStyle(
     fontSize: 15,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
+    color: AppColors.placeHolder,
+  );
+
+  static const font10PlaceHolder500 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
     color: AppColors.placeHolder,
   );
 

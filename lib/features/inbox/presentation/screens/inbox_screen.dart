@@ -4,6 +4,6 @@ class InboxScreen extends StatelessWidget {
   const InboxScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(child: Text('Inbox Screen'));
   }
 }

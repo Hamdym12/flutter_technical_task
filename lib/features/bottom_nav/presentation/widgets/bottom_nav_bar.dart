@@ -43,7 +43,7 @@ class BottomNavBar extends StatelessWidget {
             unselectedItemColor: AppColors.placeHolder,
             onTap: (value) => valueNotifier.value = value,
             items: [
-              for(int i = 0; i < 5; i++)
+              for(int i = 0; i < item.length; i++)
                 BottomNavigationBarItem(
                   backgroundColor: AppColors.white,
                   icon: Padding(

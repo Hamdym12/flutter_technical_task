@@ -38,11 +38,11 @@ class BottomNavBarModel{
     ),
   ];
 
-  static List<Widget> pages = [
-    const ExploreScreen(),
-    const ReservationScreen(),
-    const WishlistScreen(),
-    const InboxScreen(),
-    const ProfileScreen(),
+  static const List<Widget> pages = [
+    ExploreScreen(),
+    ReservationScreen(),
+    WishlistScreen(),
+    InboxScreen(),
+    ProfileScreen(),
   ];
 }
