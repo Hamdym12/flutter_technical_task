@@ -10,4 +10,8 @@ abstract class AppInsets {
 
   static EdgeInsetsDirectional buttonInnerPadding =
       EdgeInsetsDirectional.symmetric(horizontal: 8.5.w, vertical: 4.h);
+
+
+  static EdgeInsetsDirectional componentInnerPadding =
+  EdgeInsetsDirectional.symmetric(horizontal: 8.w, vertical: 6.h);
 }

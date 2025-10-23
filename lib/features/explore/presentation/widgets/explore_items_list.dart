@@ -43,7 +43,7 @@ class ExploreItemsList extends StatelessWidget {
                          height: 452.h,
                          decoration: BoxDecoration(
                              color: AppColors.white,
-                             borderRadius: BorderRadius.circular(AppRadius.xl),
+                             borderRadius: BorderRadius.circular(AppRadius.xl12),
                              border: Border.all(
                                  color: AppColors.superLightGrey,
                                  width: 1
@@ -135,6 +135,33 @@ class ExploreItemsList extends StatelessWidget {
              );
             }
           ),
+          Positioned(
+            top: 0,
+            bottom: 20.h,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: AppInsets.buttonInnerPadding,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryPurple600,
+                  borderRadius: BorderRadius.circular(AppRadius.componentRadius8)
+                ),
+                child: Row(
+                  spacing: 5.w,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(AppAssets.map),
+                    Text(
+                        'Map View',
+                      style: AppTextStyles.font14White600.copyWith(
+                        fontSize: 14.sp
+                      )
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -28,4 +28,5 @@ abstract class AppAssets{
   static const mapPinSvg = "$_svgIconsPath/map_pin.svg";
   static const heartSvg = "$_svgIconsPath/heart.svg";
   static const starSvg = "$_svgIconsPath/star.svg";
+  static const map = "$_svgIconsPath/map.svg";
 }

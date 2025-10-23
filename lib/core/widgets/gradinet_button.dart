@@ -20,7 +20,7 @@ class GradientButton extends StatelessWidget {
           width: 1,
         ),
         color: AppColors.primaryPurple600,
-        borderRadius: BorderRadius.circular(AppRadius.xxl),
+        borderRadius: BorderRadius.circular(AppRadius.xxl16),
         gradient: AppGradients.linearButton,
       ),
       child: Text(

@@ -84,8 +84,8 @@ class _SearchTextFieldState extends State<SearchTextField> {
             decoration: const BoxDecoration(
               color:  AppColors.grey50,
               borderRadius: BorderRadiusDirectional.only(
-                topEnd: Radius.circular(AppRadius.basicFormInput),
-                bottomEnd: Radius.circular(AppRadius.basicFormInput),
+                topEnd: Radius.circular(AppRadius.basicFormInput8),
+                bottomEnd: Radius.circular(AppRadius.basicFormInput8),
               ),
             ),
             child: Padding(
@@ -96,7 +96,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadius.basicFormInput),
+          borderRadius: BorderRadius.circular(AppRadius.basicFormInput8),
           borderSide: BorderSide.none,
         ),
       ),
