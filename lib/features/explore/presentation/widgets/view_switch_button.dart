@@ -26,7 +26,7 @@ class ViewSwitchButton extends StatelessWidget {
         children: [
           SvgPicture.asset(AppAssets.map),
           Text(
-              '${viewType == ViewType.map ? 'List' : 'Map'} View',
+              '${viewType == ViewType.map ? 'Map' : 'List'} View',
               style: AppTextStyles.font14White600.copyWith(
                   fontSize: 14.sp
             )

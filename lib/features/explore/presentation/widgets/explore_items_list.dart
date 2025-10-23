@@ -15,6 +15,7 @@ import 'package:flutter_technical_task/core/widgets/gradinet_button.dart';
 import 'package:flutter_technical_task/core/widgets/price_per_person_widget.dart';
 import 'package:flutter_technical_task/core/widgets/rating_widget.dart';
 import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc.dart';
+import 'package:flutter_technical_task/features/explore/presentation/widgets/view_switch_button.dart';
 
 class ExploreItemsList extends StatelessWidget {
   const ExploreItemsList({super.key});
@@ -138,28 +139,9 @@ class ExploreItemsList extends StatelessWidget {
           Positioned(
             top: 0,
             bottom: 20.h,
-            child: Align(
+            child: const Align(
               alignment: Alignment.bottomCenter,
-              child: Container(
-                padding: AppInsets.buttonInnerPadding,
-                decoration: BoxDecoration(
-                  color: AppColors.primaryPurple600,
-                  borderRadius: BorderRadius.circular(AppRadius.componentRadius8)
-                ),
-                child: Row(
-                  spacing: 5.w,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(AppAssets.map),
-                    Text(
-                        'Map View',
-                      style: AppTextStyles.font14White600.copyWith(
-                        fontSize: 14.sp
-                      )
-                    )
-                  ],
-                ),
-              ),
+              child: ViewSwitchButton(),
             ),
           )
         ],
