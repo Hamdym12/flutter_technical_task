@@ -14,4 +14,8 @@ abstract class AppInsets {
 
   static EdgeInsetsDirectional componentInnerPadding =
   EdgeInsetsDirectional.symmetric(horizontal: 8.w, vertical: 6.h);
+
+  static EdgeInsetsDirectional basicFormInput14H16W =
+      EdgeInsetsDirectional.symmetric(horizontal: 16.w, vertical: 14.h);
+
 }

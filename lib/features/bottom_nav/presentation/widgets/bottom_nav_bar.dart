@@ -17,7 +17,7 @@ class BottomNavBar extends StatelessWidget {
       decoration: const BoxDecoration(
        boxShadow: AppShadows.boxShadowMd,
        border: Border(
-           top: BorderSide(color: AppColors.superLightGrey)
+           top: BorderSide(color: AppColors.borderLightGrey)
        )
       ),
       child: ValueListenableBuilder(

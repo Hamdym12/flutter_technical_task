@@ -39,7 +39,7 @@ abstract class AppTextStyles{
     color: AppColors.primaryPurple600,
   );
 
-  static const baseMedium = TextStyle(
+  static const baseMediumFont16Black500 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.textBlack
@@ -73,5 +73,11 @@ abstract class AppTextStyles{
     fontSize: 14,
     color: AppColors.titleDeepGray,
     fontWeight: FontWeight.w500,
+  );
+
+  static const inputDefaultFont15ExtraGray500 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: AppColors.basicInputExtraGray,
   );
 }

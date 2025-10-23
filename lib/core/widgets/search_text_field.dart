@@ -8,7 +8,7 @@ import 'package:flutter_technical_task/core/constants/app_radius.dart';
 import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
-import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc.dart';
+import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc/explore_bloc.dart';
 
 class SearchTextField extends StatefulWidget {
   final TextEditingController? controller;
@@ -80,7 +80,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
           onTap: widget.onFilterTap,
           child: DecoratedBox(
             decoration: const BoxDecoration(
-              color:  AppColors.grey50,
+              color:  AppColors.gray50,
               borderRadius: BorderRadiusDirectional.only(
                 topEnd: Radius.circular(AppRadius.basicFormInput8),
                 bottomEnd: Radius.circular(AppRadius.basicFormInput8),

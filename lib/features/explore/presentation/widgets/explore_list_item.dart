@@ -26,9 +26,9 @@ class ExploreListItem extends StatelessWidget {
           height: 452.h,
           decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(AppRadius.xl12),
+              borderRadius: BorderRadius.circular(AppRadius.xl14),
               border: Border.all(
-                  color: AppColors.superLightGrey,
+                  color: AppColors.borderLightGrey,
                   width: 1
               ),
               boxShadow: AppShadows.dropShadowSm
@@ -58,7 +58,7 @@ class ExploreListItem extends StatelessWidget {
                           constraints: BoxConstraints(maxWidth: 321.w),
                           child: Text(
                             AppStrings.desertCamelAdventure,
-                            style: AppTextStyles.baseMedium.copyWith(
+                            style: AppTextStyles.baseMediumFont16Black500.copyWith(
                                 fontSize: 16.sp
                             ),
                             overflow: TextOverflow.ellipsis,

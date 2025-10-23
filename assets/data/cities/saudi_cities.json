@@ -1,0 +1,19 @@
+{
+  "saudi_cities": [
+    { "en": "Riyadh", "ar": "الرياض" },
+    { "en": "Jeddah", "ar": "جدة" },
+    { "en": "Dammam", "ar": "الدمام" },
+    { "en": "Makkah", "ar": "مكة المكرمة" },
+    { "en": "Madinah", "ar": "المدينة المنورة" },
+    { "en": "Khobar", "ar": "الخبر" },
+    { "en": "Abha", "ar": "أبها" },
+    { "en": "Taif", "ar": "الطائف" },
+    { "en": "Tabuk", "ar": "تبوك" },
+    { "en": "Jizan", "ar": "جيزان" },
+    { "en": "Al Ahsa", "ar": "الأحساء" },
+    { "en": "Hail", "ar": "حائل" },
+    { "en": "Najran", "ar": "نجران" },
+    { "en": "Yanbu", "ar": "ينبع" },
+    { "en": "Al Qassim", "ar": "القصيم" }
+  ]
+}

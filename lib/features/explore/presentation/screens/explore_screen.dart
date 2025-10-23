@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_technical_task/core/di/service_locater.dart';
 import 'package:flutter_technical_task/features/bottom_nav/presentation/widgets/search_appbar.dart';
-import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc.dart';
+import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc/explore_bloc.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/categories_tab_bar.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_items_listview.dart';
 
@@ -10,15 +11,10 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ExploreBloc(),
+      create: (context) => getIt<ExploreBloc>(),
       child: const Scaffold(
         appBar: SearchAppBar(),
-        body: Column(
-          children: [
-            CategoriesTabBar(),
-            ExploreItemsListView()
-          ],
-        ),
+        body: CategoriesTabBar(),
       ),
     );
   }

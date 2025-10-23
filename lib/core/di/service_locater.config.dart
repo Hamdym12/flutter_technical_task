@@ -10,6 +10,10 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter_technical_task/core/routing/app_router.dart' as _i521;
+import 'package:flutter_technical_task/features/explore/presentation/bloc/book_reservation_cubit/book_reservation_cubit.dart'
+    as _i479;
+import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc/explore_bloc.dart'
+    as _i913;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -21,6 +25,10 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     gh.singleton<_i521.AppRouter>(() => _i521.AppRouter());
+    gh.lazySingleton<_i913.ExploreBloc>(() => _i913.ExploreBloc());
+    gh.lazySingleton<_i479.BookReservationCubit>(
+      () => _i479.BookReservationCubit(),
+    );
     return this;
   }
 }

@@ -22,11 +22,17 @@ abstract class AppAssets{
   static const foodToursSvg = "$_svgIconsPath/food_tours.svg";
   static const hennaArtSvg = "$_svgIconsPath/henna_art.svg";
 
-  /// Explore Screen
+  /// Explore Screen Icons
   static const horseRidingPng = "$_pngImagesPath/horse_riding.png";
   static const camelRidingPng = "$_pngImagesPath/camel_riding.png";
   static const mapPinSvg = "$_svgIconsPath/map_pin.svg";
   static const heartSvg = "$_svgIconsPath/heart.svg";
   static const starSvg = "$_svgIconsPath/star.svg";
   static const map = "$_svgIconsPath/map.svg";
+
+  /// Book Reservation Icon
+  static const calendarSvg = "$_svgIconsPath/calendar.svg";
+
+  /// Json Files
+  static const saudiCitiesJson = "assets/data/cities/saudi_cities.json";
 }

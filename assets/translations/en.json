@@ -16,5 +16,8 @@
     "food_tours": "Food Tours",
     "henna_art": "Henna Art"
   },
-  "per_person": "per person"
+  "per_person": "per person",
+  "city": "City",
+  "selected_date": "Select Date",
+  "guest": "Guest"
 }
