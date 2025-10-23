@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_technical_task/features/bottom_nav/presentation/widgets/search_appbar.dart';
 import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/categories_tab_bar.dart';
-import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_items_list.dart';
+import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_items_listview.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -16,7 +16,7 @@ class ExploreScreen extends StatelessWidget {
         body: Column(
           children: [
             CategoriesTabBar(),
-            ExploreItemsList()
+            ExploreItemsListView()
           ],
         ),
       ),
