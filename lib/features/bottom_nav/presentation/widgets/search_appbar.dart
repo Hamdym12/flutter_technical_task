@@ -12,7 +12,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Align(
-       alignment: AlignmentDirectional.centerStart,
+       alignment: AlignmentDirectional.centerEnd,
        child: SearchTextField()
       ),
       centerTitle: false,
@@ -29,8 +29,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
          ),
          textColor: AppColors.primaryPurple600,
         offset: const Offset(4, -8),
-        child:
-        SvgPicture.asset(
+        child: SvgPicture.asset(
           AppAssets.bellSVG,
           height: 18.h,
           width: 18.w,

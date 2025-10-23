@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
@@ -7,6 +8,9 @@ class AppTheme{
   AppTheme._();
 
   static ThemeData get light => ThemeData(
+    splashFactory: Platform.isIOS ? NoSplash.splashFactory : InkRipple.splashFactory,
+    splashColor: Platform.isIOS ? Colors.transparent : AppColors.primaryPurple600.withOpacity(0.8),
+    highlightColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.primaryPurple600,
        surfaceTintColor: Colors.transparent,

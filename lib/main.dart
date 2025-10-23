@@ -8,7 +8,5 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupDependencyInjection();
   await EasyLocalization.ensureInitialized();
-
   runApp(const EasyLocalizationConfig(child: MainApp()));
 }
-

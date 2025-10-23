@@ -1,8 +1,8 @@
 {
-  "app_title": "Lave Scape",
+  "app_title": "LaveScape",
   "bottom_nav": {
     "explore": "استكشاف",
-    "reservation": "الحجوزات",
+    "reservation": "الحجز",
     "wishlist": "المفضلة",
     "inbox": "الرسائل",
     "profile": "الملف الشخصي"

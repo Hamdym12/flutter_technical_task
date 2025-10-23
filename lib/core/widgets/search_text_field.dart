@@ -21,58 +21,55 @@ class SearchTextField extends StatelessWidget {
     this.onChanged,
   });
 
-
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 38.h,
-      width: 342.w,
-      child: TextFormField(
-        cursorColor: AppColors.placeHolder,
-        cursorHeight: 18.sp,
-        cursorRadius: const Radius.circular(0),
-        controller: controller,
-        onChanged: onChanged,
-        style: TextStyle(
-          fontSize: 14.sp,
-          color: AppColors.title,
-          fontWeight: FontWeight.w500,
+    return TextFormField(
+
+      cursorColor: AppColors.placeHolder,
+      cursorHeight: 18.sp,
+      cursorRadius: const Radius.circular(0),
+      controller: controller,
+      onChanged: onChanged,
+      style: TextStyle(
+        fontSize: 14.sp,
+        color: AppColors.title,
+        fontWeight: FontWeight.w500,
+      ),
+      decoration: InputDecoration(
+        filled: true,
+        constraints: BoxConstraints(maxWidth: 324.w,maxHeight: 38.h),
+        fillColor: Colors.white,
+        hintText: hintText??LocaleKeys.search_hint.tr(),
+        hintStyle: AppTextStyles.font15PlaceHolder500,
+        prefixIconConstraints: BoxConstraints(maxWidth: 30.w),
+        prefixIcon: Padding(
+          padding: const EdgeInsetsDirectional.all(12).copyWith(
+            end: 6,
+          ),
+          child: SvgPicture.asset(
+            AppAssets.searchSVG
+          ),
         ),
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          hintText: hintText??LocaleKeys.search_hint.tr(),
-          hintStyle: AppTextStyles.font15PlaceHolder500,
-          prefixIconConstraints: BoxConstraints(maxWidth: 30.w),
-          prefixIcon: Padding(
-            padding: const EdgeInsetsDirectional.all(12).copyWith(
-              end: 6,
-            ),
-            child: SvgPicture.asset(
-              AppAssets.searchSVG
-            ),
-          ),
-          suffixIcon: GestureDetector(
-            onTap: onFilterTap,
-            child: DecoratedBox(
-              decoration: const BoxDecoration(
-                color:  AppColors.grey50,
-                borderRadius: BorderRadiusDirectional.only(
-                  topEnd: Radius.circular(8),
-                  bottomEnd: Radius.circular(8),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.all(12),
-                child: SvgPicture.asset(AppAssets.equalizerSVG),
+        suffixIcon: GestureDetector(
+          onTap: onFilterTap,
+          child: DecoratedBox(
+            decoration: const BoxDecoration(
+              color:  AppColors.grey50,
+              borderRadius: BorderRadiusDirectional.only(
+                topEnd: Radius.circular(8),
+                bottomEnd: Radius.circular(8),
               ),
             ),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.all(12),
+              child: SvgPicture.asset(AppAssets.equalizerSVG),
+            ),
           ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
-          ),
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
         ),
       ),
     );
