@@ -68,4 +68,10 @@ abstract class AppTextStyles{
     fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
+
+  static const font14DeepGray500 = TextStyle(
+    fontSize: 14,
+    color: AppColors.titleDeepGray,
+    fontWeight: FontWeight.w500,
+  );
 }

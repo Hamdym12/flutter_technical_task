@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class AppInsets {
-  static EdgeInsetsDirectional pageHorizontal = EdgeInsetsDirectional.symmetric(
+  static EdgeInsetsDirectional pageHorizontal20 = EdgeInsetsDirectional.symmetric(
     horizontal: 20.w,
   );
   static EdgeInsetsDirectional listItemInnerPadding =
