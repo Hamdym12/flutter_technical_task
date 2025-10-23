@@ -14,7 +14,9 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: const Align(
        alignment: AlignmentDirectional.centerEnd,
-       child: SearchTextField()
+       child: SearchTextField(
+
+       )
       ),
       centerTitle: false,
       automaticallyImplyLeading: false,

@@ -23,7 +23,8 @@ abstract class AppAssets{
   static const hennaArtSvg = "$_svgIconsPath/henna_art.svg";
 
   /// Explore Screen
-  static const camelDesertRidingPng = "$_pngImagesPath/camel_desert_riding.png";
+  static const horseRidingPng = "$_pngImagesPath/horse_riding.png";
+  static const camelRidingPng = "$_pngImagesPath/camel_riding.png";
   static const mapPinSvg = "$_svgIconsPath/map_pin.svg";
   static const heartSvg = "$_svgIconsPath/heart.svg";
   static const starSvg = "$_svgIconsPath/star.svg";

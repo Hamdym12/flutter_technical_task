@@ -22,12 +22,12 @@ class AddToWishlistWidget extends StatelessWidget {
            children: [
              Icon(
                Icons.favorite,
-               color: value ? Colors.red: const Color(0x4D222222),
+               color: value ? AppColors.red : AppColors.lightShadowGray,
                size: 25,
              ),
              Icon(
                CupertinoIcons.heart,
-               color: value ? Colors.red : AppColors.white,
+               color: value ? AppColors.red : AppColors.white,
                size: 25,
              ),
            ],
