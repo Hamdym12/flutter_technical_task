@@ -93,4 +93,11 @@ abstract class AppTextStyles{
     fontWeight: FontWeight.w400,
     color: AppColors.titleDeepGray,
   );
+
+  static final font15White600 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+    letterSpacing: 0.5,
+  );
 }

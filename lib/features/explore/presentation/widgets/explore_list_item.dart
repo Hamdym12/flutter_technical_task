@@ -93,7 +93,7 @@ class ExploreListItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if(index==0) const GradientButton()
+              if(index==0) const GradientBluredButton()
               else const SizedBox(),
               const AddToWishlistWidget(isLiked: false)
             ],

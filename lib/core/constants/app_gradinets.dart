@@ -5,7 +5,9 @@ abstract class AppGradients {
       colors: [
         Color(0xCCFFFFFF),
         Color(0x4DF1F1F1),
-      ]
+      ],
+     begin: Alignment.topLeft,
+     end: Alignment.bottomRight,
   );
 
   static const linearBorder = LinearGradient(

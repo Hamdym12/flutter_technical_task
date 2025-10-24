@@ -10,19 +10,14 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(393, 852),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: MaterialApp.router(
-        routerConfig: getIt<AppRouter>().config(),
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        title: LocaleKeys.app_title.tr(),
-        theme: AppTheme.light,
-        debugShowCheckedModeBanner: false,
-      ),
+    return MaterialApp.router(
+      routerConfig: getIt<AppRouter>().config(),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      title: LocaleKeys.app_title.tr(),
+      theme: AppTheme.light,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

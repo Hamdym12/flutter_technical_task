@@ -30,4 +30,9 @@ abstract class AppInsets {
     horizontal: 16.w,
   );
 
+  static EdgeInsetsDirectional buttonH12V10 = EdgeInsetsDirectional.symmetric(
+    horizontal: 12.w,
+    vertical: 10.h,
+  );
+
 }
