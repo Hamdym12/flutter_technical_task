@@ -20,4 +20,13 @@ abstract class AppShadows{
      color: AppColors.shadowBlack
     )
   ];
+
+  static const dropShadowX = [
+    BoxShadow(
+        offset: Offset(0, 10),
+        blurRadius: 8,
+        spreadRadius: 0,
+        color: AppColors.shadowLiteGray
+    )
+  ];
 }

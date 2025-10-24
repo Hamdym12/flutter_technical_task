@@ -40,8 +40,9 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # drop down selection
   drop_down_list: ^2.0.0
-  # calender date picker
-  syncfusion_flutter_calendar: ^31.2.3
+  # calender
+  syncfusion_flutter_datepicker: ^31.2.3
+
 
 
 dev_dependencies:

@@ -12,13 +12,13 @@ abstract class AppTextStyles{
   static const font15PlaceHolder500 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
-    color: AppColors.placeHolder,
+    color: AppColors.placeHolderShadowGray,
   );
 
   static const font10PlaceHolder500 = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w500,
-    color: AppColors.placeHolder,
+    color: AppColors.placeHolderShadowGray,
   );
 
   static const font11PrimaryPurpleBold = TextStyle(
@@ -79,5 +79,11 @@ abstract class AppTextStyles{
     fontSize: 15,
     fontWeight: FontWeight.w500,
     color: AppColors.basicInputExtraGray,
+  );
+
+  static const mediumLgFont18DeepGray500 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.titleDeepGray,
   );
 }

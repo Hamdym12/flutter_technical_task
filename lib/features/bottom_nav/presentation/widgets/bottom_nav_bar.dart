@@ -34,7 +34,7 @@ class BottomNavBar extends StatelessWidget {
             unselectedLabelStyle: AppTextStyles.font12PrimaryPurple400
                 .copyWith(fontSize: 12.sp),
             selectedItemColor: AppColors.primaryPurple600,
-            unselectedItemColor: AppColors.placeHolder,
+            unselectedItemColor: AppColors.placeHolderShadowGray,
             onTap: (value) => valueNotifier.value = value,
             items: [
               for(int i = 0; i < item.length; i++)
@@ -49,7 +49,7 @@ class BottomNavBar extends StatelessWidget {
                           colorFilter: ColorFilter.mode(
                               value == i ?
                               AppColors.primaryPurple600 :
-                              AppColors.placeHolder,
+                              AppColors.placeHolderShadowGray,
                               BlendMode.srcIn
                           )
                       ),

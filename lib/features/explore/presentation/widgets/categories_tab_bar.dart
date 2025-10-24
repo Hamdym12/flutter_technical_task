@@ -70,7 +70,7 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
                        colorFilter: ColorFilter.mode(
                            value == i ?
                            AppColors.primaryPurple600:
-                           AppColors.placeHolder,
+                           AppColors.placeHolderShadowGray,
                            BlendMode.srcIn
                        )
                      ),

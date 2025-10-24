@@ -52,7 +52,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.placeHolder,
+      cursorColor: AppColors.placeHolderShadowGray,
       focusNode: _focusNode,
       cursorHeight: 18.sp,
       cursorRadius: const Radius.circular(0),

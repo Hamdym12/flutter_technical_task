@@ -9,7 +9,15 @@ part 'book_reservation_state.dart';
 class BookReservationCubit extends Cubit<BookReservationState> {
   BookReservationCubit() : super(const BookReservationInitial());
 
-  void selectCity(String city) => emit(state.copyWith(selectedCity: city));
+  void selectCity(String city) {
+    emit(state.copyWith(selectedCity: city));
+  }
 
-  void selectDate(String date)=> emit(state.copyWith(selectedDate: date));
+  void selectDateRange({required String dateRange}) {
+    emit(state.copyWith(selectedDateRange: dateRange));
+  }
+
+  void toggleDataPicker() {
+    emit(state.copyWith(isDatePickerOpen: !state.isDatePickerOpen));
+  }
 }

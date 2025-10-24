@@ -3,23 +3,26 @@ part of 'book_reservation_cubit.dart';
 @immutable
 class BookReservationState extends Equatable{
   final String? selectedCity;
-  final String? selectedDate;
-  const BookReservationState({this.selectedCity, this.selectedDate});
+  final String? selectedDateRange;
+  final bool isDatePickerOpen;
+  const BookReservationState({this.selectedCity, this.selectedDateRange,this.isDatePickerOpen=false});
   @override
-  List<Object?> get props => [selectedCity, selectedDate];
+  List<Object?> get props => [selectedCity, selectedDateRange,isDatePickerOpen];
 
   BookReservationState copyWith({
     String? selectedCity,
-    String? selectedDate,
+    String? selectedDateRange,
+    bool? isDatePickerOpen,
   }) {
     return BookReservationState(
       selectedCity: selectedCity ?? this.selectedCity,
-      selectedDate: selectedDate ?? this.selectedDate,
+      selectedDateRange: selectedDateRange ?? this.selectedDateRange,
+      isDatePickerOpen: isDatePickerOpen ?? this.isDatePickerOpen,
     );
   }
 
 }
 
 class BookReservationInitial extends BookReservationState {
-  const BookReservationInitial({super.selectedCity, super.selectedDate});
+  const BookReservationInitial({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen});
 }
