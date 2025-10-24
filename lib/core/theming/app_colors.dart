@@ -17,4 +17,5 @@ abstract class AppColors {
   static const basicInputExtraGray = Color(0xff1F2937);
   static const shadowLiteGray = Color(0x0A000000);
   static const disabledDateLightGray = Color(0xffD1D5DB);
+  static const neutral03 = Color(0xffDDDDDD);
 }

@@ -21,9 +21,7 @@ class ExploreItemsListView extends StatelessWidget {
             ListView.separated(
               itemCount: 3,
               padding: EdgeInsets.only(bottom: 24.h),
-              itemBuilder: (context,index){
-                return ExploreListItem(index: index);
-              },
+              itemBuilder: (context,index)=> ExploreListItem(index: index),
               separatorBuilder: (context,index)=>SizedBox(height: 10.h,),
             ),
             BlocBuilder<ExploreBloc,ExploreState>(

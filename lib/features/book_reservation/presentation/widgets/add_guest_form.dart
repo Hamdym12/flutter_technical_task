@@ -25,7 +25,7 @@ class AddGuestForm extends StatelessWidget {
     return Column(
       children: [
         BasicFormWidget(
-          title: LocaleKeys.guest.tr(),
+          title: state.formattedGuestTitle,
           onTap: ()=> context.read<BookReservationCubit>().toggleGuestPicker(),
           suffix: Padding(
             padding: AppInsets.basicFormInput12H,
@@ -34,7 +34,7 @@ class AddGuestForm extends StatelessWidget {
               children: [
                 for(int i=0;i<2;i++)
                   GestureDetector(
-                    onTap: ()=> HapticFeedback.lightImpact(),
+                    onTap: () => context.read<BookReservationCubit>().toggleGuestPicker(),
                     child: Container(
                       height: 24.h,
                       width: 24.w,
@@ -73,9 +73,9 @@ class AddGuestForm extends StatelessWidget {
                   "Add Guest",
                   style: AppTextStyles.font18DeepGray500
                 ),
-                _buildGuestTypeTile(context: context, guestType: GuestType.adult),
+                _buildGuestTypeTile(state,context: context, guestType: GuestType.adult),
                 Divider(height: 12.h,thickness: 1,color: AppColors.borderLightGrey),
-                _buildGuestTypeTile(context: context, guestType: GuestType.children),
+                _buildGuestTypeTile(state,context: context, guestType: GuestType.children),
               ],
             );
             },
@@ -88,7 +88,12 @@ class AddGuestForm extends StatelessWidget {
  );
   }
 
-  Widget _buildGuestTypeTile({required BuildContext context,required GuestType guestType}){
+  Widget _buildGuestTypeTile(
+  BookReservationState state,
+  {
+    required BuildContext context,
+    required GuestType guestType,
+  }){
     final guest = AddGuestDataModel.data;
     final cubit = context.read<BookReservationCubit>();
     return ListTile(
@@ -105,55 +110,51 @@ class AddGuestForm extends StatelessWidget {
               color: AppColors.placeHolderShadowGray
           ),
         ),
-        trailing: BlocBuilder<BookReservationCubit, BookReservationState>(
-        builder: (context, state) {
-          return ConstrainedBox(
-           constraints: BoxConstraints(maxWidth: 200.w),
-           child: Row(
-             mainAxisSize: MainAxisSize.min,
-             spacing: 12.w,
-             children: [
-               _buildButton(
-                   context,
-                   isMinus: true,
-                   onTap: () {
-                     if (state.guestAdultCounter > 0 && guestType == GuestType.adult) {
-                       cubit.decrementAdultCounter();
-                     }else if (state.guestChildCounter > 0 && guestType == GuestType.children){
-                       cubit.decrementChildCounter();
-                     }
-                   }
-               ),
-               ConstrainedBox(
-                 constraints: BoxConstraints(
-                     maxWidth: 80.w,
-                     minWidth: 12.h
-                 ),
-                 child: Text(
-                   guestType == GuestType.adult ?
-                   state.guestAdultCounter.toString():
-                   state.guestChildCounter.toString(),
-                   style: AppTextStyles.baseMediumFont16Black500
-                       .copyWith(
-                       color: AppColors.titleDeepGray
-                   ),
-                   maxLines: 1,
-                   overflow: TextOverflow.ellipsis,
-                 ),
-               ),
-               _buildButton(
-                   context,
-                   onTap: () {
-                     HapticFeedback.lightImpact();
-                     guestType == GuestType.adult ?
-                     cubit.incrementAdultCounter() :
-                     cubit.incrementChildCounter();
-                   }
-               )
-             ],
-           )
-          );
-        }
+        trailing: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 200.w),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 12.w,
+              children: [
+                _buildButton(
+                    context,
+                    isMinus: true,
+                    onTap: () {
+                      if (state.guestAdultCounter > 0 && guestType == GuestType.adult) {
+                        cubit.decrementAdultCounter();
+                      }else if (state.guestChildCounter > 0 && guestType == GuestType.children){
+                        cubit.decrementChildCounter();
+                      }
+                    }
+                ),
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxWidth: 80.w,
+                      minWidth: 12.h
+                  ),
+                  child: Text(
+                    guestType == GuestType.adult ?
+                    state.guestAdultCounter.toString():
+                    state.guestChildCounter.toString(),
+                    style: AppTextStyles.baseMediumFont16Black500
+                        .copyWith(
+                        color: AppColors.titleDeepGray
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                _buildButton(
+                    context,
+                    onTap: () {
+                      HapticFeedback.lightImpact();
+                      guestType == GuestType.adult ?
+                      cubit.incrementAdultCounter() :
+                      cubit.incrementChildCounter();
+                    }
+                )
+              ],
+            )
         )
     );
   }

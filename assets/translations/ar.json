@@ -19,5 +19,7 @@
   "per_person": "لكل شخص",
   "city": "المدينة",
   "selected_date": "اختر التاريخ",
-  "guest": "الضيف"
+  "guest": "الضيف",
+  "adult": "بالغ",
+  "children": "اطفال"
 }

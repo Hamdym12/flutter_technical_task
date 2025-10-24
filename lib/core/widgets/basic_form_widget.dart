@@ -29,10 +29,15 @@ class BasicFormWidget extends StatelessWidget {
           children: [
             Padding(
               padding: AppInsets.basicFormInput14H16W,
-              child: Text(
-                title,
-                style: AppTextStyles.inputDefaultFont15ExtraGray500
-                    .copyWith(letterSpacing: 0.5),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 220.w),
+                child: Text(
+                  title,
+                  style: AppTextStyles.inputDefaultFont15ExtraGray500
+                      .copyWith(letterSpacing: 0.5),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
             suffix ?? const SizedBox.shrink()

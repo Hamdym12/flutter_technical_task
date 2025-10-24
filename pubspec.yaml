@@ -42,6 +42,8 @@ dependencies:
   drop_down_list: ^2.0.0
   # calender
   syncfusion_flutter_datepicker: ^31.2.3
+  # page view indicator
+  smooth_page_indicator: ^1.2.1
 
 
 

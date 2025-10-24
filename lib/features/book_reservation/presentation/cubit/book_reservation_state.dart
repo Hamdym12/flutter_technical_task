@@ -12,6 +12,24 @@ class BookReservationState extends Equatable{
   @override
   List<Object?> get props => [selectedCity, selectedDateRange,isDatePickerOpen,isGuestPickerOpen,guestAdultCounter,guestChildCounter];
 
+  String get formattedGuestTitle {
+    final totalGuests = guestAdultCounter + guestChildCounter;
+
+    if (totalGuests == 0) {
+      return LocaleKeys.guest.tr();
+    }
+
+    if (guestChildCounter == 0) {
+      return "$guestAdultCounter ${LocaleKeys.adult.tr()}";
+    }
+
+    if (guestAdultCounter == 0) {
+      return "$guestChildCounter ${LocaleKeys.children.tr()}";
+    }
+
+    return "$guestAdultCounter ${LocaleKeys.adult.tr()}, $guestChildCounter ${LocaleKeys.children.tr()}";
+  }
+
   BookReservationState copyWith({
     String? selectedCity,
     String? selectedDateRange,

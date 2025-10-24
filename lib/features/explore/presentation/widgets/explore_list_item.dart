@@ -12,11 +12,11 @@ import 'package:flutter_technical_task/core/widgets/add_to_wishlist_widget.dart'
 import 'package:flutter_technical_task/core/widgets/gradinet_button.dart';
 import 'package:flutter_technical_task/core/widgets/price_per_person_widget.dart';
 import 'package:flutter_technical_task/core/widgets/rating_widget.dart';
+import 'package:flutter_technical_task/features/explore/presentation/widgets/item_image_pageview.dart';
 
 class ExploreListItem extends StatelessWidget {
   const ExploreListItem({super.key, required this.index});
   final int index;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -36,14 +36,7 @@ class ExploreListItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                index == 1 ?
-                AppAssets.camelRidingPng :
-                AppAssets.horseRidingPng,
-                height: 334.h,
-                width: double.infinity,
-                fit: BoxFit.fill,
-              ),
+              ItemImagePageview(index: index),
               Padding(
                 padding: AppInsets.listItemInnerPadding16H16V,
                 child: Column(

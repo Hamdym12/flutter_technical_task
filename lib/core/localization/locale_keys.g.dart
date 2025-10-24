@@ -22,5 +22,7 @@ abstract class  LocaleKeys {
   static const city = 'city';
   static const selected_date = 'selected_date';
   static const guest = 'guest';
+  static const adult = 'adult';
+  static const children = 'children';
 
 }

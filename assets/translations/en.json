@@ -19,5 +19,7 @@
   "per_person": "per person",
   "city": "City",
   "selected_date": "Select Date",
-  "guest": "Guest"
+  "guest": "Guest",
+  "adult": "Adult",
+  "children": "Children"
 }
