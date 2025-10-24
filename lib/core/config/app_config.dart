@@ -6,7 +6,6 @@ abstract class AppConfig {
       DeviceOrientation.portraitDown,
       DeviceOrientation.portraitUp,
     ]);
-
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 
   }

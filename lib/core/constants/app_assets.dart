@@ -35,4 +35,10 @@ abstract class AppAssets{
 
   /// Json Files
   static const saudiCitiesJson = "assets/data/cities/saudi_cities.json";
+
+  /// Search Images
+  static const camelRidingPyramid = "$_pngImagesPath/camel_ride_pyramid.png";
+  static const coffeeBrewing = "$_pngImagesPath/coffee_brewing.png";
+  static const hennaHandArt = "$_pngImagesPath/henna_hand_art.png";
+
 }

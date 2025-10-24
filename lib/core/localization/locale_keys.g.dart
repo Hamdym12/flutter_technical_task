@@ -24,5 +24,7 @@ abstract class  LocaleKeys {
   static const guest = 'guest';
   static const adult = 'adult';
   static const children = 'children';
+  static const cancel = 'cancel';
+  static const recent_search = 'recent_search';
 
 }

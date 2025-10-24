@@ -21,5 +21,7 @@
   "selected_date": "Select Date",
   "guest": "Guest",
   "adult": "Adult",
-  "children": "Children"
+  "children": "Children",
+  "cancel": "Cancel",
+  "recent_search": "Recent Search"
 }

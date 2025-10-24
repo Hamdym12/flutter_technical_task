@@ -7,7 +7,6 @@ import 'package:meta/meta.dart';
 
 part 'search_state.dart';
 
-@lazySingleton
 class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(const SearchInitialState());
 
