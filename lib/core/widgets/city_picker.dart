@@ -50,6 +50,7 @@ class CityPicker {
         enableMultipleSelection: false, // single selection
         isSearchVisible: true,
         searchHintText: tr('Search'),
+        searchFillColor: AppColors.gray50,
         bottomSheetTitle: Text(
           tr(LocaleKeys.city.tr()),
           style: AppTextStyles.baseMediumFont16Black500,
