@@ -8,18 +8,15 @@ import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/features/explore/presentation/bloc/book_reservation_cubit/book_reservation_cubit.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-class CustomCalendar extends StatefulWidget {
-  const CustomCalendar({super.key});
+class CalenderDateRangePicker extends StatefulWidget {
+  const CalenderDateRangePicker({super.key});
 
   @override
-  State<CustomCalendar> createState() => _CustomCalendarState();
+  State<CalenderDateRangePicker> createState() => _CalenderDateRangePickerState();
 }
 
-class _CustomCalendarState extends State<CustomCalendar> {
-  String _selectedDate = '';
-  String _dateCount = '';
+class _CalenderDateRangePickerState extends State<CalenderDateRangePicker> {
   String _range = '';
-  String _rangeCount = '';
 
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     setState(() {
@@ -28,23 +25,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
         final DateTime start = range.startDate ?? DateTime.now();
         final DateTime end = range.endDate ?? start;
 
-        // استخدم صيغة مختصرة للشهر (Aug, Sep, etc)
         final String startMonth = DateFormat('MMM').format(start);
         final String endMonth = DateFormat('MMM').format(end);
 
         if (startMonth == endMonth) {
-          // لو الشهرين نفس بعض → Aug 10–12
           _range = '$startMonth ${start.day}–${end.day}';
         } else {
-          // لو مختلفين → Aug 30 – Sep 2
           _range = '$startMonth ${start.day} – $endMonth ${end.day}';
         }
-      } else if (args.value is DateTime) {
-        _selectedDate = DateFormat('MMM d').format(args.value);
-      } else if (args.value is List<DateTime>) {
-        _dateCount = args.value.length.toString();
-      } else {
-        _rangeCount = args.value.length.toString();
       }
     });
 

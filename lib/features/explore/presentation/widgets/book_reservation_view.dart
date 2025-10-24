@@ -13,7 +13,7 @@ import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/core/widgets/basic_form_widget.dart';
 import 'package:flutter_technical_task/core/widgets/city_picker.dart';
-import 'package:flutter_technical_task/core/widgets/custom_calender.dart';
+import 'package:flutter_technical_task/core/widgets/calender_date_range_picker.dart';
 import 'package:flutter_technical_task/features/explore/presentation/bloc/book_reservation_cubit/book_reservation_cubit.dart';
 
 class BookReservationView extends StatelessWidget {
@@ -81,7 +81,7 @@ class BookReservationView extends StatelessWidget {
                                     boxShadow: AppShadows.dropShadowX,
                                     border: Border.all(color: AppColors.borderLightGrey),
                                   ),
-                                  child: const CustomCalendar(),
+                                  child: const CalenderDateRangePicker(),
                                 ),
                                 crossFadeState: state.isDatePickerOpen
                                     ? CrossFadeState.showSecond
