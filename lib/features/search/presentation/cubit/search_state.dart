@@ -53,3 +53,11 @@ class SearchState extends Equatable{
 class SearchInitialState extends SearchState {
   const SearchInitialState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen,super.guestAdultCounter,super.guestChildCounter});
 }
+
+class SubmitSearchState extends SearchState {
+  const SubmitSearchState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen});
+}
+
+class DismissSearchState extends SearchState{
+  const DismissSearchState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen});
+}

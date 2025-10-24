@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +32,11 @@ class AddGuestForm extends StatelessWidget {
               children: [
                 for(int i=0;i<2;i++)
                   GestureDetector(
-                    onTap: () => context.read<SearchCubit>().toggleGuestPicker(),
+                    onTap: () {
+                      i==1?
+                      context.read<SearchCubit>().toggleGuestPicker():
+                      context.read<SearchCubit>().resetGuests();
+                    },
                     child: Container(
                       height: 24.h,
                       width: 24.w,
