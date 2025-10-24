@@ -45,7 +45,7 @@ class ExploreListItem extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
               Padding(
-                padding: AppInsets.listItemInnerPadding,
+                padding: AppInsets.listItemInnerPadding16H16V,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -100,7 +100,7 @@ class ExploreListItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: AppInsets.listItemInnerPadding,
+          padding: AppInsets.listItemInnerPadding16H16V,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

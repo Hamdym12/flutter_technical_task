@@ -44,7 +44,7 @@ class _CalenderDateRangePickerState extends State<CalenderDateRangePicker> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppInsets.listItemInnerPadding.copyWith(top: 0),
+      padding: AppInsets.listItemInnerPadding16H16V.copyWith(top: 0),
       child: SfDateRangePicker(
         onSelectionChanged: _onSelectionChanged,
         todayHighlightColor: AppColors.primaryPurple600,
@@ -54,7 +54,7 @@ class _CalenderDateRangePickerState extends State<CalenderDateRangePicker> {
         minDate: DateTime.now(),
         headerHeight: 60.h,
         headerStyle: const DateRangePickerHeaderStyle(
-          textStyle: AppTextStyles.mediumLgFont18DeepGray500,
+          textStyle: AppTextStyles.font18DeepGray500,
           backgroundColor: AppColors.white,
            textAlign: TextAlign.center,
         ),

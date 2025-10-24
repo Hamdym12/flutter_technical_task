@@ -23,7 +23,7 @@ class PricePerPersonWidget extends StatelessWidget {
                   "\$${price?.toStringAsFixed(2) ?? '69.99'}",
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
-                  style: AppTextStyles.boldLG.copyWith(fontSize: 18.sp),
+                  style: AppTextStyles.font18Black700.copyWith(fontSize: 18.sp),
                 ),
               ),
             ),

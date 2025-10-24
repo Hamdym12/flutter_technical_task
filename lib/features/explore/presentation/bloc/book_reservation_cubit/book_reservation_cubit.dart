@@ -20,4 +20,8 @@ class BookReservationCubit extends Cubit<BookReservationState> {
   void toggleDataPicker() {
     emit(state.copyWith(isDatePickerOpen: !state.isDatePickerOpen));
   }
+
+  void toggleGuestPicker() {
+    emit(state.copyWith(isGuestPickerOpen: !state.isGuestPickerOpen));
+  }
 }

@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -91,7 +93,89 @@ class BookReservationView extends StatelessWidget {
                             ),
                           ],
                         ),
-                        BasicFormWidget(title: LocaleKeys.guest.tr()),
+                        Column(
+                          spacing: state.isGuestPickerOpen ? 4.h : 0.h,
+                          children: [
+                            BasicFormWidget(
+                                title: LocaleKeys.guest.tr(),
+                              onTap: (){
+                                context.read<BookReservationCubit>().toggleGuestPicker();
+                              },
+                              suffix: Padding(
+                                padding: AppInsets.basicFormInput12H,
+                                child: Row(
+                                  spacing: 6.w,
+                                  children: [
+                                    for(int i=0;i<2;i++)
+                                    GestureDetector(
+                                      onTap: (){
+                                        HapticFeedback.lightImpact();
+                                      },
+                                      child: Container(
+                                        height: 24.h,
+                                        width: 24.w,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.white,
+                                          borderRadius: BorderRadius.circular(AppRadius.basicFormInput8),
+                                          border: Border.all(color: AppColors.borderLightGrey),
+                                          boxShadow: AppShadows.dropShadowSm
+                                        ),
+                                        child: Center(
+                                          child: Icon(
+                                            i==0 ? CupertinoIcons.minus :
+                                            CupertinoIcons.add,
+                                            color: AppColors.titleDeepGray,
+                                            size: 16,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            AnimatedSize(
+                              duration: const Duration(milliseconds: 600),
+                              curve: Curves.fastEaseInToSlowEaseOut,
+                              alignment: Alignment.topCenter,
+                              clipBehavior: Clip.antiAlias,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(AppRadius.overLayDropDown12),
+                                child: AnimatedOpacity(
+                                  duration: const Duration(milliseconds: 300),
+                                  opacity: state.isGuestPickerOpen ? 1 : 0,
+                                  curve: Curves.easeIn,
+                                  child: Container(
+                                    padding: AppInsets.componentH20V20,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.white,
+                                      borderRadius: BorderRadius.circular(
+                                          AppRadius.overLayDropDown12
+                                      ),
+                                      boxShadow:
+                                      state.isGuestPickerOpen ? AppShadows.dropShadowX : [],
+                                      border: state.isGuestPickerOpen
+                                          ? Border.all(color: AppColors.borderLightGrey)
+                                          : null,
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Add Guest",
+                                          style: AppTextStyles.font18DeepGray500.copyWith(
+                                            fontSize: 16.sp,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                         SizedBox(height: 9.h),
                         Text(
                           'Recent Search',

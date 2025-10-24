@@ -51,7 +51,7 @@ abstract class AppTextStyles{
       color: AppColors.gray700
   );
 
-  static const boldLG = TextStyle(
+  static const font18Black700 = TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w700,
       color: AppColors.textBlack
@@ -81,7 +81,7 @@ abstract class AppTextStyles{
     color: AppColors.basicInputExtraGray,
   );
 
-  static const mediumLgFont18DeepGray500 = TextStyle(
+  static const font18DeepGray500 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
     color: AppColors.titleDeepGray,
