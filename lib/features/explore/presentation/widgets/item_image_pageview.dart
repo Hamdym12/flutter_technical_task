@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
-import 'package:flutter_technical_task/core/constants/app_insets.dart';
-import 'package:flutter_technical_task/core/constants/app_radius.dart';
-import 'package:flutter_technical_task/core/constants/app_shadows.dart';
-import 'package:flutter_technical_task/core/constants/app_strings.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
-import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
-import 'package:flutter_technical_task/core/widgets/add_to_wishlist_widget.dart';
-import 'package:flutter_technical_task/core/widgets/gradinet_button.dart';
-import 'package:flutter_technical_task/core/widgets/price_per_person_widget.dart';
-import 'package:flutter_technical_task/core/widgets/rating_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ItemImagePageview extends StatefulWidget {
-  const ItemImagePageview({super.key, required this.index});
-  final int index;
+  const ItemImagePageview({super.key, required this.listIndex});
+  final int listIndex;
 
   @override
   State<ItemImagePageview> createState() => _ItemImagePageviewState();
@@ -34,6 +24,15 @@ class _ItemImagePageviewState extends State<ItemImagePageview> {
     super.dispose();
   }
 
+  final List<String> simulatedImages = [
+    AppAssets.horseRidingPng,
+    AppAssets.camelRidingPng,
+    AppAssets.horseRidingPng,
+    AppAssets.camelRidingPng,
+    AppAssets.horseRidingPng,
+    AppAssets.camelRidingPng,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -48,9 +47,11 @@ class _ItemImagePageviewState extends State<ItemImagePageview> {
               itemCount: 6,
               itemBuilder: (context,index){
                 return Image.asset(
-                  widget.index == 1 ?
-                  AppAssets.camelRidingPng :
-                  AppAssets.horseRidingPng,
+                  widget.listIndex == 0?
+                  simulatedImages[index]:
+                  simulatedImages[index].replaceFirst(
+                    AppAssets.horseRidingPng, AppAssets.camelRidingPng
+                  ),
                   height: 334.h,
                   width: double.infinity,
                   fit: BoxFit.fill,

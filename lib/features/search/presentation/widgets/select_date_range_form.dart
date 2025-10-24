@@ -12,19 +12,19 @@ import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/widgets/basic_form_widget.dart';
 import 'package:flutter_technical_task/core/widgets/calender_date_range_picker.dart';
 import 'package:flutter_technical_task/core/widgets/custom_animated_switcher_transition.dart';
-import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart';
+import 'package:flutter_technical_task/features/search/presentation/cubit/search_cubit.dart';
 
 class SelectDateRangeForm extends StatelessWidget {
   const SelectDateRangeForm({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BookReservationCubit, BookReservationState>(
+    return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         return Column(
           children: [
             BasicFormWidget(
               title: state.selectedDateRange ?? LocaleKeys.selected_date.tr(),
-              onTap: () => context.read<BookReservationCubit>().toggleDataPicker(),
+              onTap: () => context.read<SearchCubit>().toggleDataPicker(),
               suffix: Container(
                 width: 48.w,
                 alignment: Alignment.center,

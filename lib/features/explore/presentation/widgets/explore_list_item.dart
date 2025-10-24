@@ -36,7 +36,7 @@ class ExploreListItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ItemImagePageview(index: index),
+              ItemImagePageview(listIndex: index),
               Padding(
                 padding: AppInsets.listItemInnerPadding16H16V,
                 child: Column(

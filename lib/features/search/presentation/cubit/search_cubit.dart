@@ -5,11 +5,11 @@ import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-part 'book_reservation_state.dart';
+part 'search_state.dart';
 
 @lazySingleton
-class BookReservationCubit extends Cubit<BookReservationState> {
-  BookReservationCubit() : super(const BookReservationInitial());
+class SearchCubit extends Cubit<SearchState> {
+  SearchCubit() : super(const SearchInitialState());
 
   void selectCity(String city) => emit(state.copyWith(selectedCity: city));
 

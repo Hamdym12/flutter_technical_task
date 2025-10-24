@@ -1,14 +1,14 @@
-part of 'book_reservation_cubit.dart';
+part of 'search_cubit.dart';
 
 @immutable
-class BookReservationState extends Equatable{
+class SearchState extends Equatable{
   final String? selectedCity;
   final String? selectedDateRange;
   final bool isDatePickerOpen;
   final bool isGuestPickerOpen;
   final int guestAdultCounter;
   final int guestChildCounter;
-  const BookReservationState({this.guestAdultCounter = 0, this.guestChildCounter = 0, this.selectedCity, this.selectedDateRange,this.isDatePickerOpen=false,this.isGuestPickerOpen=false});
+  const SearchState({this.guestAdultCounter = 0, this.guestChildCounter = 0, this.selectedCity, this.selectedDateRange,this.isDatePickerOpen=false,this.isGuestPickerOpen=false});
   @override
   List<Object?> get props => [selectedCity, selectedDateRange,isDatePickerOpen,isGuestPickerOpen,guestAdultCounter,guestChildCounter];
 
@@ -30,7 +30,7 @@ class BookReservationState extends Equatable{
     return "$guestAdultCounter ${LocaleKeys.adult.tr()}, $guestChildCounter ${LocaleKeys.children.tr()}";
   }
 
-  BookReservationState copyWith({
+  SearchState copyWith({
     String? selectedCity,
     String? selectedDateRange,
     bool? isDatePickerOpen,
@@ -38,7 +38,7 @@ class BookReservationState extends Equatable{
     int? guestAdultCounter,
     int? guestChildCounter,
   }) {
-    return BookReservationState(
+    return SearchState(
       selectedCity: selectedCity ?? this.selectedCity,
       selectedDateRange: selectedDateRange ?? this.selectedDateRange,
       isDatePickerOpen:  isDatePickerOpen ?? this.isDatePickerOpen,
@@ -50,6 +50,6 @@ class BookReservationState extends Equatable{
 
 }
 
-class BookReservationInitial extends BookReservationState {
-  const BookReservationInitial({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen,super.guestAdultCounter,super.guestChildCounter});
+class SearchInitialState extends SearchState {
+  const SearchInitialState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen,super.guestAdultCounter,super.guestChildCounter});
 }

@@ -4,13 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_technical_task/core/widgets/basic_form_widget.dart';
 import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/widgets/city_picker.dart';
-import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart';
+import 'package:flutter_technical_task/features/search/presentation/cubit/search_cubit.dart';
 
 class SelectCityForm extends StatelessWidget {
   const SelectCityForm({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BookReservationCubit, BookReservationState>(
+    return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         return BasicFormWidget(
           title: state.selectedCity ?? LocaleKeys.city.tr(),

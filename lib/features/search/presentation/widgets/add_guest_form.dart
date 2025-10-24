@@ -8,25 +8,24 @@ import 'package:flutter_technical_task/core/constants/app_insets.dart';
 import 'package:flutter_technical_task/core/constants/app_radius.dart';
 import 'package:flutter_technical_task/core/constants/app_shadows.dart';
 import 'package:flutter_technical_task/core/enums/guest_type.dart';
-import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/core/widgets/basic_form_widget.dart';
 import 'package:flutter_technical_task/core/widgets/custom_animated_switcher_transition.dart';
-import 'package:flutter_technical_task/features/book_reservation/data/models/add_guest_data_model.dart';
-import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart';
+import 'package:flutter_technical_task/features/search/data/models/add_guest_data_model.dart';
+import 'package:flutter_technical_task/features/search/presentation/cubit/search_cubit.dart';
 
 class AddGuestForm extends StatelessWidget {
   const AddGuestForm({super.key});
   @override
   Widget build(BuildContext context) {
-  return BlocBuilder<BookReservationCubit, BookReservationState>(
+  return BlocBuilder<SearchCubit, SearchState>(
    builder: (context, state) {
     return Column(
       children: [
         BasicFormWidget(
           title: state.formattedGuestTitle,
-          onTap: ()=> context.read<BookReservationCubit>().toggleGuestPicker(),
+          onTap: ()=> context.read<SearchCubit>().toggleGuestPicker(),
           suffix: Padding(
             padding: AppInsets.basicFormInput12H,
             child: Row(
@@ -34,7 +33,7 @@ class AddGuestForm extends StatelessWidget {
               children: [
                 for(int i=0;i<2;i++)
                   GestureDetector(
-                    onTap: () => context.read<BookReservationCubit>().toggleGuestPicker(),
+                    onTap: () => context.read<SearchCubit>().toggleGuestPicker(),
                     child: Container(
                       height: 24.h,
                       width: 24.w,
@@ -63,7 +62,7 @@ class AddGuestForm extends StatelessWidget {
           child: CustomAnimatedSwitcherTransition(
             isOpen: state.isGuestPickerOpen,
             valueKey: 'guest_picker',
-            child: BlocBuilder<BookReservationCubit, BookReservationState>(
+            child: BlocBuilder<SearchCubit, SearchState>(
             builder: (context, state) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,13 +88,13 @@ class AddGuestForm extends StatelessWidget {
   }
 
   Widget _buildGuestTypeTile(
-  BookReservationState state,
+  SearchState state,
   {
     required BuildContext context,
     required GuestType guestType,
   }){
     final guest = AddGuestDataModel.data;
-    final cubit = context.read<BookReservationCubit>();
+    final cubit = context.read<SearchCubit>();
     return ListTile(
         minTileHeight: 40.h,
         minVerticalPadding: 0,

@@ -43,9 +43,9 @@ class _SearchAppBarState extends State<SearchAppBar> {
               end: isSearchActive ? 0.w : 12.w,
               start: 20.w,
             ),
-            child: const SearchTextField(),
+            child: const SearchTextField(key: ValueKey('search_field')),
           ),
-          leadingWidth: !isSearchActive ? 0 : 44.w,
+          leadingWidth: !isSearchActive ? 0 : 32.w,
           leading: AnimatedSlide(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeOutCubic,
@@ -64,7 +64,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
                 context.read<ExploreBloc>().add(ExploreSearchClosed());
               },
               child: Padding(
-                padding: EdgeInsetsDirectional.only(start: 0.w),
+                padding: EdgeInsetsDirectional.only(start: 12.w),
                 child: const Icon(
                     Icons.arrow_back_rounded,
                     color: AppColors.white
@@ -82,8 +82,10 @@ class _SearchAppBarState extends State<SearchAppBar> {
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeOutCubic,
                 opacity: isSearchActive ? 0 : 1,
-                child: Padding(
-                  padding: EdgeInsets.only(right: 20.w),
+                child: AnimatedPadding(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOutCubic,
+                  padding: EdgeInsets.only(right: isSearchActive ? 8.w : 20.w),
                   child: Badge(
                     largeSize: 14.h,
                     smallSize: 14.h,

@@ -1,12 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/features/explore/data/categories_data_model.dart';
-import 'package:flutter_technical_task/features/book_reservation/presentation/screens/book_reservation_view.dart';
+import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc/explore_bloc.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_items_listview.dart';
+import 'package:flutter_technical_task/features/search/presentation/screens/search_screen.dart';
 
 class CategoriesTabBar extends StatefulWidget {
   const CategoriesTabBar({super.key});
@@ -81,15 +83,19 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
           }
         ),
         Expanded(
-          child: TabBarView(
-             physics: const BouncingScrollPhysics(),
-            controller: _tabController,
-              children: [
-                for(int i = 0; i < item.length; i++)
-                  i == 0 ?
-                  const ExploreItemsListView():
-                  const BookReservationView()
-              ]
+          child: BlocBuilder<ExploreBloc,ExploreState>(
+            builder: (context,state) {
+              return TabBarView(
+                 physics: const BouncingScrollPhysics(),
+                controller: _tabController,
+                  children: [
+                    for(int i = 0; i < item.length; i++)
+                      state is ExploreSearchActive ?
+                      const SearchScreen() :
+                      const ExploreItemsListView()
+                  ]
+              );
+            }
           ),
         )
       ],

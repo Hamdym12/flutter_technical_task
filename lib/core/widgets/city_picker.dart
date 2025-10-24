@@ -10,7 +10,7 @@ import 'package:flutter_technical_task/core/constants/app_assets.dart';
 import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
-import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart';
+import 'package:flutter_technical_task/features/search/presentation/cubit/search_cubit.dart';
 
 class CityPicker {
   static List<Map<String, dynamic>>? _cachedCities;
@@ -57,7 +57,7 @@ class CityPicker {
         ),
         onSelected: (selectedItems) {
           if (selectedItems.isNotEmpty) {
-            context.read<BookReservationCubit>().selectCity(selectedItems.first.data);
+            context.read<SearchCubit>().selectCity(selectedItems.first.data);
           }
         },
       ),

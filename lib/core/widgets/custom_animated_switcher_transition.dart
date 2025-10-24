@@ -17,13 +17,13 @@ class CustomAnimatedSwitcherTransition extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(AppRadius.overLayDropDown12),
       child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 400),
         switchInCurve: Curves.easeOutCubic,
-        switchOutCurve: Curves.easeOutCubic,
+        switchOutCurve: Curves.fastOutSlowIn,
         transitionBuilder: (child, animation) {
           return SizeTransition(
             sizeFactor: animation,
-            axisAlignment: -1.0,
+            axisAlignment: 0.0,
             child: FadeTransition(
               opacity: animation,
               child: child,
