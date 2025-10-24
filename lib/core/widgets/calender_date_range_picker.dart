@@ -2,10 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_technical_task/core/constants/app_insets.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
-import 'package:flutter_technical_task/features/explore/presentation/bloc/book_reservation_cubit/book_reservation_cubit.dart';
+import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class CalenderDateRangePicker extends StatefulWidget {
@@ -43,32 +42,32 @@ class _CalenderDateRangePickerState extends State<CalenderDateRangePicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppInsets.listItemInnerPadding16H16V.copyWith(top: 0),
-      child: SfDateRangePicker(
-        onSelectionChanged: _onSelectionChanged,
-        todayHighlightColor: AppColors.primaryPurple600,
-        selectionMode: DateRangePickerSelectionMode.range,
+    return SfDateRangePicker(
+      onSelectionChanged: _onSelectionChanged,
+      selectionRadius: 20.h,
+      todayHighlightColor: AppColors.primaryPurple600,
+      selectionMode: DateRangePickerSelectionMode.range,
+      backgroundColor: AppColors.white,
+       rangeSelectionColor: AppColors.gray50,
+      selectionTextStyle: AppTextStyles.font14White600.copyWith(
+       fontWeight: FontWeight.w500
+      ),
+      minDate: DateTime.now(),
+      headerHeight: 60.h,
+      headerStyle: DateRangePickerHeaderStyle(
+        textStyle: AppTextStyles.font18DeepGray500,
         backgroundColor: AppColors.white,
-         rangeSelectionColor: AppColors.gray50,
-        minDate: DateTime.now(),
-        headerHeight: 60.h,
-        headerStyle: const DateRangePickerHeaderStyle(
-          textStyle: AppTextStyles.font18DeepGray500,
-          backgroundColor: AppColors.white,
-           textAlign: TextAlign.center,
-        ),
-        initialSelectedRange: PickerDateRange(
-          DateTime.now().subtract(const Duration(days: 4)),
-          DateTime.now().add(const Duration(days: 3)),
-        ),
-        rangeTextStyle: AppTextStyles.font14DeepGray500.copyWith(
-          fontSize: 14.sp
-        ),
-        monthCellStyle: DateRangePickerMonthCellStyle(
-           textStyle: AppTextStyles.font14DeepGray500.copyWith(
-             fontSize: 14.sp
-           ),
+         textAlign: TextAlign.center,
+      ),
+      initialSelectedRange: PickerDateRange(
+        DateTime.now(),
+        DateTime.now().add(const Duration(days: 5)),
+      ),
+      rangeTextStyle: AppTextStyles.font14DeepGray500,
+      monthCellStyle: DateRangePickerMonthCellStyle(
+         textStyle: AppTextStyles.font14DeepGray500,
+        disabledDatesTextStyle: AppTextStyles.font14DeepGray500.copyWith(
+            color: AppColors.disabledDateLightGray
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/features/explore/data/categories_data_model.dart';
+import 'package:flutter_technical_task/features/book_reservation/presentation/screens/book_reservation_view.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_items_listview.dart';
 
 class CategoriesTabBar extends StatefulWidget {
@@ -16,7 +17,7 @@ class CategoriesTabBar extends StatefulWidget {
 class _CategoriesTabBarState extends State<CategoriesTabBar> with
  SingleTickerProviderStateMixin {
   late final TabController _tabController;
-  final _selectedIndex = ValueNotifier<int>(0);
+  final valueNotifier = ValueNotifier<int>(0);
   @override
   void initState() {
     super.initState();
@@ -29,7 +30,7 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
     return Column(
       children: [
         ValueListenableBuilder(
-          valueListenable: _selectedIndex,
+          valueListenable: valueNotifier,
           builder: (context, value, child) {
            return TabBar(
              tabAlignment: TabAlignment.start,
@@ -48,12 +49,13 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
                  ),
                  insets: EdgeInsets.zero
              ),
-             unselectedLabelStyle: AppTextStyles.font10PlaceHolder500
-                 .copyWith(fontSize: 10.sp),
+             unselectedLabelStyle: AppTextStyles.font10PlaceHolder500,
              labelStyle: AppTextStyles.font12PrimaryPurple500
                  .copyWith(fontSize: 10.sp),
              padding: EdgeInsetsDirectional.only(top: 4.h),
-             onTap: (v) => _selectedIndex.value = v,
+             onTap: (v) {
+               valueNotifier.value = v;
+             },
              tabs: [
               for(int i = 0; i < item.length; i++)
                Padding(
@@ -78,16 +80,18 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
             );
           }
         ),
-         Expanded(
-         child: TabBarView(
-           physics: const BouncingScrollPhysics(),
-           controller: _tabController,
-           children: [
-             for(int i = 0; i < item.length; i++)
-               const ExploreItemsListView()
-           ]
-           ),
-         )
+        Expanded(
+          child: TabBarView(
+             physics: const BouncingScrollPhysics(),
+            controller: _tabController,
+              children: [
+                for(int i = 0; i < item.length; i++)
+                  i == 0 ?
+                  const ExploreItemsListView():
+                  const BookReservationView()
+              ]
+          ),
+        )
       ],
     );
   }

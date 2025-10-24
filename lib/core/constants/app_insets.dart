@@ -26,4 +26,8 @@ abstract class AppInsets {
     vertical: 20.h,
   );
 
+  static EdgeInsetsDirectional componentH16 = EdgeInsetsDirectional.symmetric(
+    horizontal: 16.w,
+  );
+
 }

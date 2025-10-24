@@ -26,7 +26,6 @@ class GradientButton extends StatelessWidget {
       child: Text(
         title??'Guest Favorite',
         style: AppTextStyles.font10PlaceHolder500.copyWith(
-            fontSize: 10.sp,
             color: AppColors.textBlack,
             letterSpacing: 0.5
         ),

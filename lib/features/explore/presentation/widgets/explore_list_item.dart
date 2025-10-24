@@ -58,9 +58,7 @@ class ExploreListItem extends StatelessWidget {
                           constraints: BoxConstraints(maxWidth: 321.w),
                           child: Text(
                             AppStrings.desertCamelAdventure,
-                            style: AppTextStyles.baseMediumFont16Black500.copyWith(
-                                fontSize: 16.sp
-                            ),
+                            style: AppTextStyles.baseMediumFont16Black500,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                           ),
@@ -73,9 +71,7 @@ class ExploreListItem extends StatelessWidget {
                               constraints: BoxConstraints(maxWidth: 280.w),
                               child: Text(
                                 AppStrings.adventureLocation,
-                                style: AppTextStyles.regularSM.copyWith(
-                                    fontSize: 14.sp
-                                ),
+                                style: AppTextStyles.regularSmFont14Gray,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
                               ),

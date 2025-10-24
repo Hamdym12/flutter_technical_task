@@ -10,7 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter_technical_task/core/routing/app_router.dart' as _i521;
-import 'package:flutter_technical_task/features/explore/presentation/bloc/book_reservation_cubit/book_reservation_cubit.dart'
+import 'package:flutter_technical_task/features/book_reservation/presentation/cubit/book_reservation_cubit.dart'
     as _i479;
 import 'package:flutter_technical_task/features/explore/presentation/bloc/explore_bloc/explore_bloc.dart'
     as _i913;

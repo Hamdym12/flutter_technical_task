@@ -58,9 +58,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
       cursorRadius: const Radius.circular(0),
       controller: widget.controller,
       onChanged: widget.onChanged,
-      style: AppTextStyles.font14DeepGray500.copyWith(
-        fontSize: 14.sp,
-      ),
+      style: AppTextStyles.font14DeepGray500,
       decoration: InputDecoration(
         filled: true,
         constraints: BoxConstraints(maxHeight: 38.h),

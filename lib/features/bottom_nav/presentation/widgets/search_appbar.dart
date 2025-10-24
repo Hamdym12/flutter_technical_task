@@ -92,7 +92,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
                 largeSize: 14.h,
                 smallSize: 14.h,
                 backgroundColor: AppColors.white,
-                label: const Text(
+                label: Text(
                   '3',
                   style: AppTextStyles.font11PrimaryPurpleBold,
                 ),

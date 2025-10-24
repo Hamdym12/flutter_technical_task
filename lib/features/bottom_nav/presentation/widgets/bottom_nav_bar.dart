@@ -29,10 +29,8 @@ class BottomNavBar extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             enableFeedback: false,
             currentIndex: valueNotifier.value,
-            selectedLabelStyle: AppTextStyles.font12PrimaryPurple500
-                .copyWith(fontSize: 12.sp),
-            unselectedLabelStyle: AppTextStyles.font12PrimaryPurple400
-                .copyWith(fontSize: 12.sp),
+            selectedLabelStyle: AppTextStyles.font12PrimaryPurple500,
+            unselectedLabelStyle: AppTextStyles.font12PrimaryPurple400,
             selectedItemColor: AppColors.primaryPurple600,
             unselectedItemColor: AppColors.placeHolderShadowGray,
             onTap: (value) => valueNotifier.value = value,

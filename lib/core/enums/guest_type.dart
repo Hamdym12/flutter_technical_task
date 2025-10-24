@@ -1,0 +1,1 @@
+enum GuestType{adult, children}

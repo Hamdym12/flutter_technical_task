@@ -32,10 +32,7 @@ class BasicFormWidget extends StatelessWidget {
               child: Text(
                 title,
                 style: AppTextStyles.inputDefaultFont15ExtraGray500
-                    .copyWith(
-                    fontSize: 15.sp,
-                    letterSpacing: 0.5
-                ),
+                    .copyWith(letterSpacing: 0.5),
               ),
             ),
             suffix ?? const SizedBox.shrink()

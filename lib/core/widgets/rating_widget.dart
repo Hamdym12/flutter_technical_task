@@ -15,7 +15,7 @@ class RatingWidget extends StatelessWidget {
         SvgPicture.asset(AppAssets.starSvg),
         Text(
             rating?.toStringAsFixed(2) ?? '4.81',
-            style: AppTextStyles.regularSM
+            style: AppTextStyles.regularSmFont14Gray
         )
       ],
     );
