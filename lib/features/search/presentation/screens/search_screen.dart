@@ -14,40 +14,53 @@ class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 20.h),
-      child: SingleChildScrollView(
-        child: BlocBuilder<SearchCubit, SearchState>(
-          builder: (context, state) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: AppInsets.pageHorizontal20,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SelectCityForm(),
-                      SizedBox(height: 12.h),
-                      const SelectDateRangeForm(),
-                      SizedBox(height: 8.h),
-                      const AddGuestForm(),
-                      SizedBox(height: 26.h),
-                      Text(
-                        'Recent Search',
-                        style: AppTextStyles.baseMediumFont16Black500,
-                      )
-                    ],
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Padding(
+        padding: EdgeInsets.only(top: 20.h),
+        child: SingleChildScrollView(
+          child: BlocBuilder<SearchCubit, SearchState>(
+            builder: (context, state) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: AppInsets.pageHorizontal20,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SelectCityForm(),
+                        SizedBox(height: 12.h),
+                        const SelectDateRangeForm(),
+                        SizedBox(height: 8.h),
+                        const AddGuestForm(),
+                        SizedBox(height: 26.h),
+                        Text(
+                          'Recent Search',
+                          style: AppTextStyles.baseMediumFont16Black500,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Divider(
-                  color: AppColors.borderLightGrey,
-                  thickness: 1,
-                  height: 24.h,
-                )
-              ],
-            );
-          },
+                  Divider(
+                    color: AppColors.borderLightGrey,
+                    thickness: 1,
+                    height: 24.h,
+                  ),
+                  Spacer(),
+                  Container(
+                    height: 90.h,
+                    child: Column(
+                      children: [
+
+                      ],
+                    ),
+                  )
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

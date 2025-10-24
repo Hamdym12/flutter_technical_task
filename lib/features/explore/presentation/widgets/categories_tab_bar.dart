@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -90,9 +91,24 @@ class _CategoriesTabBarState extends State<CategoriesTabBar> with
                 controller: _tabController,
                   children: [
                     for(int i = 0; i < item.length; i++)
-                      state is ExploreSearchActive ?
-                      const SearchScreen() :
-                      const ExploreItemsListView()
+                      PageTransitionSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder: (child, animation, secondaryAnimation) {
+                          return FadeTransition(
+                             opacity: animation,
+                            child: SharedAxisTransition(
+                              animation: animation,
+                              secondaryAnimation: secondaryAnimation,
+                              transitionType: SharedAxisTransitionType.vertical,
+                              fillColor: Colors.transparent,
+                              child: child,
+                            ),
+                          );
+                        },
+                        child: state is ExploreSearchActive ?
+                          ? const SearchScreen(key: ValueKey('search'))
+                          : const ExploreItemsListView(key: ValueKey('explore')),
+                      )
                   ]
               );
             }
