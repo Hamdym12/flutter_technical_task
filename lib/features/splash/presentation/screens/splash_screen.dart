@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed((const Duration(milliseconds: 2000)),(){
+    Future.delayed((const Duration(milliseconds: 2500)),(){
       if(mounted) context.replaceRoute(const BottomNavRoute());
     });
     super.initState();
