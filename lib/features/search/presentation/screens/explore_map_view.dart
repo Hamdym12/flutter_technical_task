@@ -28,20 +28,18 @@ class ExploreMapView extends StatelessWidget{
           bottom: 20.h,
           left: 0,
           right: 0,
-          child: SizedBox(
-            width: 30,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: BlocBuilder<SearchCubit,SearchState>(
-              builder: (context,state) {
-                return ViewSwitchButton(
-                  viewType: state.viewType,
-                  onTap: ()=> context.read<SearchCubit>().toggleViewType(),
-                );
-              }
-              ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: BlocBuilder<SearchCubit,SearchState>(
+            builder: (context,state) {
+              return ViewSwitchButton(
+                viewType: state.viewType,
+                onTap: ()=> context.read<SearchCubit>().toggleViewType(),
+              );
+            }
             ),
-          ))
+          )
+        )
       ],
     );
   }

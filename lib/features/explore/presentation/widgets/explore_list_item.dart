@@ -9,7 +9,7 @@ import 'package:flutter_technical_task/core/constants/app_strings.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:flutter_technical_task/core/widgets/add_to_wishlist_widget.dart';
-import 'package:flutter_technical_task/core/widgets/gradinet_button.dart';
+import 'package:flutter_technical_task/core/widgets/gradient_blured_button.dart';
 import 'package:flutter_technical_task/core/widgets/price_per_person_widget.dart';
 import 'package:flutter_technical_task/core/widgets/rating_widget.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/item_image_pageview.dart';

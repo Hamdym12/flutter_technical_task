@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
@@ -36,6 +37,10 @@ class ViewSwitchButton extends StatelessWidget {
           ],
         ),
       ),
+    ).animate().slideY(
+        begin: 0.1,
+        duration: 400.ms,
+        curve: Curves.easeOutCubic
     );
   }
 }

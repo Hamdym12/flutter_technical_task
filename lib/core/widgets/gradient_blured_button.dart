@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_technical_task/core/constants/app_gradinets.dart';
 import 'package:flutter_technical_task/core/constants/app_insets.dart';
 import 'package:flutter_technical_task/core/constants/app_radius.dart';
+import 'package:flutter_technical_task/core/constants/app_shadows.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
@@ -23,7 +24,7 @@ class GradientBluredButton extends StatelessWidget {
               gradient:AppGradients.linearBorder,
               width: 1,
             ),
-            color: AppColors.primaryPurple600,
+            boxShadow: AppShadows.dropShadowSm,
             borderRadius: BorderRadius.circular(AppRadius.xxl16),
             gradient: AppGradients.linearButton,
           ),
@@ -31,7 +32,6 @@ class GradientBluredButton extends StatelessWidget {
             title??'Guest Favorite',
             style: AppTextStyles.font10PlaceHolder500.copyWith(
                 color: AppColors.textBlack,
-                letterSpacing: 0.5
             ),
           ),
         ),
