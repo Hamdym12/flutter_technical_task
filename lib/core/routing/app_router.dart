@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_technical_task/features/search/presentation/screens/search_screen.dart';
 import 'package:injectable/injectable.dart';
+
 import 'app_router.gr.dart';
 
 @Singleton()
@@ -14,5 +14,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/', page: SplashRoute.page, initial: true),
     AutoRoute(path: '/BottomNavRoute', page: BottomNavRoute.page),
     AutoRoute(path: '/SearchScreenRoute', page: SearchScreenRoute.page),
+    AutoRoute(path: '/SearchResultScreenRoute', page: SearchResultScreenRoute.page),
   ];
 }

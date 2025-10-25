@@ -29,6 +29,7 @@ abstract class AppAssets{
   static const heartSvg = "$_svgIconsPath/heart.svg";
   static const starSvg = "$_svgIconsPath/star.svg";
   static const map = "$_svgIconsPath/map.svg";
+  static const list = "$_svgIconsPath/list.svg";
 
   /// Book Reservation Icon
   static const calendarSvg = "$_svgIconsPath/calendar.svg";
@@ -41,4 +42,7 @@ abstract class AppAssets{
   static const coffeeBrewing = "$_pngImagesPath/coffee_brewing.png";
   static const hennaHandArt = "$_pngImagesPath/henna_hand_art.png";
 
+  /// Explore Map Icons
+  static const locationMark = "$_svgIconsPath/location_mark.svg";
+  static const mapView = "$_pngImagesPath/map_view.png";
 }

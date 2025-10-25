@@ -1,16 +1,35 @@
 part of 'search_cubit.dart';
 
 @immutable
-class SearchState extends Equatable{
+class SearchState extends Equatable {
   final String? selectedCity;
   final String? selectedDateRange;
   final bool isDatePickerOpen;
   final bool isGuestPickerOpen;
   final int guestAdultCounter;
   final int guestChildCounter;
-  const SearchState({this.guestAdultCounter = 0, this.guestChildCounter = 0, this.selectedCity, this.selectedDateRange,this.isDatePickerOpen=false,this.isGuestPickerOpen=false});
+  final ViewType viewType;
+
+  const SearchState({
+    this.guestAdultCounter = 0,
+    this.guestChildCounter = 0,
+    this.selectedCity,
+    this.selectedDateRange,
+    this.isDatePickerOpen = false,
+    this.isGuestPickerOpen = false,
+    this.viewType = ViewType.list,
+  });
+
   @override
-  List<Object?> get props => [selectedCity, selectedDateRange,isDatePickerOpen,isGuestPickerOpen,guestAdultCounter,guestChildCounter];
+  List<Object?> get props => [
+    selectedCity,
+    selectedDateRange,
+    isDatePickerOpen,
+    isGuestPickerOpen,
+    guestAdultCounter,
+    guestChildCounter,
+    viewType,
+  ];
 
   String get formattedGuestTitle {
     final totalGuests = guestAdultCounter + guestChildCounter;
@@ -37,27 +56,28 @@ class SearchState extends Equatable{
     bool? isGuestPickerOpen,
     int? guestAdultCounter,
     int? guestChildCounter,
+    ViewType? viewType,
   }) {
     return SearchState(
       selectedCity: selectedCity ?? this.selectedCity,
       selectedDateRange: selectedDateRange ?? this.selectedDateRange,
-      isDatePickerOpen:  isDatePickerOpen ?? this.isDatePickerOpen,
+      isDatePickerOpen: isDatePickerOpen ?? this.isDatePickerOpen,
       isGuestPickerOpen: isGuestPickerOpen ?? this.isGuestPickerOpen,
       guestAdultCounter: guestAdultCounter ?? this.guestAdultCounter,
-      guestChildCounter: guestChildCounter ?? this.guestChildCounter
+      guestChildCounter: guestChildCounter ?? this.guestChildCounter,
+      viewType: viewType ?? this.viewType,
     );
   }
-
 }
 
 class SearchInitialState extends SearchState {
-  const SearchInitialState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen,super.guestAdultCounter,super.guestChildCounter});
-}
-
-class SubmitSearchState extends SearchState {
-  const SubmitSearchState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen});
-}
-
-class DismissSearchState extends SearchState{
-  const DismissSearchState({super.selectedCity, super.selectedDateRange,super.isDatePickerOpen,super.isGuestPickerOpen});
+  const SearchInitialState({
+    super.selectedCity,
+    super.selectedDateRange,
+    super.isDatePickerOpen,
+    super.isGuestPickerOpen,
+    super.guestAdultCounter,
+    super.guestChildCounter,
+    super.viewType,
+  });
 }

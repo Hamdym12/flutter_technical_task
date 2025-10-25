@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_technical_task/core/constants/app_insets.dart';
+import 'package:flutter_technical_task/core/enums/view_type.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_list_item.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/view_switch_button.dart';
 
 class ExploreItemsListView extends StatelessWidget {
-  const ExploreItemsListView({super.key});
+  const ExploreItemsListView({super.key, this.onViewTypeTap, this.viewType=ViewType.list});
+  final Function()? onViewTypeTap;
+  final ViewType viewType;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,9 +27,12 @@ class ExploreItemsListView extends StatelessWidget {
            Positioned(
             top: 0,
             bottom: 20.h,
-            child: const Align(
+            child: Align(
               alignment: Alignment.bottomCenter,
-              child: ViewSwitchButton(),
+              child: ViewSwitchButton(
+                onTap: onViewTypeTap,
+                viewType: viewType,
+              ),
             ),
              )
           ],
