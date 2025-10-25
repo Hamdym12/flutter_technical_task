@@ -15,9 +15,7 @@ class AppTheme {
     splashFactory: Platform.isIOS
         ? NoSplash.splashFactory
         : InkRipple.splashFactory,
-    splashColor: Platform.isIOS
-        ? Colors.transparent
-        : AppColors.primaryPurple600.withOpacity(0.8),
+    splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.primaryPurple600,

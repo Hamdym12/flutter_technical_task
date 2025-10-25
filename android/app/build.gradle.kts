@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = " com.perfecttouch.lavescape"
+    namespace = "com.perfecttouch.lavescape"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
