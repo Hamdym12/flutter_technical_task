@@ -26,20 +26,26 @@ class SearchResultScreen extends StatelessWidget implements AutoRouteWrapper {
         readOnly: false,
         searchBar: Padding(
           padding: EdgeInsetsDirectional.only(start: 20.w),
-          child: const Stack(
+          child: Stack(
             alignment: Alignment.topCenter,
             children: [
               AppTextField(
                 readOnly: true,
-                prefixIcon: SizedBox.shrink(),
-                suffixIcon: Icon(
-                  Icons.close_sharp,
-                  color: AppColors.placeHolderShadowGray,
-                  size: 18,
+                prefixIcon: const SizedBox.shrink(),
+                suffixIcon: GestureDetector(
+                  onTap: (){
+                    context.read<SearchCubit>().resetAll();
+                    context.maybePop();
+                  },
+                  child: const Icon(
+                    Icons.close_sharp,
+                    color: AppColors.placeHolderShadowGray,
+                    size: 18,
+                  ),
                 ),
                 hintText: '',
               ),
-              SearchResultData()
+              const SearchResultData()
             ],
           ),
         ),

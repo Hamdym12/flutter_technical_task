@@ -17,16 +17,19 @@ class ExploreMapView extends StatelessWidget{
         return Stack(
           alignment: AlignmentDirectional.topEnd,
           children: [
-            Image.asset(
-              AppAssets.mapView,
-              fit: BoxFit.fill,
-              width: double.infinity,
-              height: double.infinity,
+            GestureDetector(
+              onTap: ()=> context.read<SearchCubit>().toggleViewMapFloatedList(),
+              child: Image.asset(
+                AppAssets.mapView,
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: double.infinity,
+              ),
             ),
             Padding(
               padding: AppInsets.componentH20V20,
               child: GestureDetector(
-                    onTap: ()=> context.read<SearchCubit>().toggleViewMapList(),
+                    onTap: ()=> context.read<SearchCubit>().toggleViewMapFloatedList(),
                     child: SvgPicture.asset(AppAssets.locationMark)
               ),
             ),

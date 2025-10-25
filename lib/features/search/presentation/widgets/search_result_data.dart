@@ -25,16 +25,23 @@ class SearchResultData extends StatelessWidget {
               LayoutBuilder(
                   builder: (context,constraints) {
                     return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 35.w),
+                      padding: EdgeInsetsDirectional.symmetric(horizontal: 35.w).copyWith(
+                        start: 12.w
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         spacing: 10.w,
                         children: [
-                          Text(
-                            state.selectedCity??'',
-                            style: AppTextStyles.font12PrimaryPurple500.copyWith(
-                                color: AppColors.placeHolderShadowGray
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: constraints.maxWidth*0.25),
+                            child: Text(
+                              state.selectedCity??'',
+                              style: AppTextStyles.font12PrimaryPurple500.copyWith(
+                                  color: AppColors.placeHolderShadowGray
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           Container(
@@ -44,10 +51,15 @@ class SearchResultData extends StatelessWidget {
                                 color: AppColors.extraLightGrey,
                                 shape: CircleBorder()),
                           ),
-                          Text(
-                            state.selectedDateRange??'',
-                            style: AppTextStyles.font12PrimaryPurple500.copyWith(
-                                color: AppColors.placeHolderShadowGray
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: constraints.maxWidth*0.25),
+                            child: Text(
+                              state.selectedDateRange??'',
+                              style: AppTextStyles.font12PrimaryPurple500.copyWith(
+                                  color: AppColors.placeHolderShadowGray
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
                             ),
                           ),
                           if(state.guestAdultCounter != 0 || state.guestChildCounter != 0)
@@ -61,7 +73,7 @@ class SearchResultData extends StatelessWidget {
                               ),
 
                               ConstrainedBox(
-                                constraints: BoxConstraints(maxWidth: constraints.maxWidth*0.2),
+                                constraints: BoxConstraints(maxWidth: constraints.maxWidth*0.25),
                                 child: Text(
                                   state.formattedGuestTitle,
                                   style: AppTextStyles.font12PrimaryPurple500.copyWith(
