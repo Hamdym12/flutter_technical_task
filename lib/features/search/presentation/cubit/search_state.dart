@@ -10,6 +10,7 @@ class SearchState extends Equatable {
   final int guestChildCounter;
   final ViewType viewType;
   final String? selectedCategory;
+  final bool isViewMapListFloated;
 
   const SearchState({
     this.guestAdultCounter = 0,
@@ -20,6 +21,7 @@ class SearchState extends Equatable {
     this.isGuestPickerOpen = false,
     this.viewType = ViewType.list,
     this.selectedCategory,
+    this.isViewMapListFloated = false,
   });
 
   @override
@@ -32,6 +34,7 @@ class SearchState extends Equatable {
     guestChildCounter,
     viewType,
     selectedCategory,
+    isViewMapListFloated,
   ];
 
   String get formattedGuestTitle {
@@ -61,6 +64,7 @@ class SearchState extends Equatable {
     int? guestChildCounter,
     ViewType? viewType,
     String? selectedCategory,
+    bool? isViewMapListFloated,
   }) {
     return SearchState(
       selectedCity: selectedCity ?? this.selectedCity,
@@ -71,6 +75,7 @@ class SearchState extends Equatable {
       guestChildCounter: guestChildCounter ?? this.guestChildCounter,
       viewType: viewType ?? this.viewType,
       selectedCategory: selectedCategory ?? this.selectedCategory,
+      isViewMapListFloated: isViewMapListFloated ?? this.isViewMapListFloated,
     );
   }
 }
@@ -85,5 +90,6 @@ class SearchInitialState extends SearchState {
     super.guestChildCounter,
     super.viewType,
     super.selectedCategory,
+    super.isViewMapListFloated,
   });
 }

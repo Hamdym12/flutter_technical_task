@@ -10,10 +10,12 @@ import 'package:flutter_technical_task/features/explore/presentation/widgets/exp
 import 'package:flutter_technical_task/features/explore/presentation/widgets/view_switch_button.dart';
 
 class ExploreItemsListView extends StatefulWidget {
-  const ExploreItemsListView({super.key, this.onViewTypeTap, this.viewType=ViewType.list, this.hasShimmer=false});
+  const ExploreItemsListView({super.key, this.onViewTypeTap, this.viewType=ViewType.list, this.hasShimmer=false, this.itemCount, this.hasViewToggleButton=true});
   final Function()? onViewTypeTap;
   final ViewType viewType;
   final bool hasShimmer;
+  final int? itemCount;
+  final bool hasViewToggleButton;
   @override
   State<ExploreItemsListView> createState() => _ExploreItemsListViewState();
 }
@@ -40,7 +42,7 @@ class _ExploreItemsListViewState extends State<ExploreItemsListView> {
           alignment: Alignment.bottomCenter,
           children: [
             ListView.separated(
-              itemCount: 3,
+              itemCount: widget.itemCount ?? 3,
               padding: EdgeInsets.only(bottom: 24.h),
               itemBuilder: (context,index) {
                 return _isLoading ?
@@ -48,6 +50,7 @@ class _ExploreItemsListViewState extends State<ExploreItemsListView> {
               },
               separatorBuilder: (context,index)=>SizedBox(height: 10.h,),
             ),
+           if(widget.hasViewToggleButton)
            Positioned(
             top: 0,
             bottom: 20.h,

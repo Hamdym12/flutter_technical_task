@@ -32,5 +32,6 @@ class SearchCubit extends Cubit<SearchState> {
 
   void selectCategory(String category) => emit(state.copyWith(selectedCategory: category));
 
+  void toggleViewMapList()=> emit(state.copyWith(isViewMapListFloated: !state.isViewMapListFloated));
 
 }
