@@ -10,54 +10,57 @@ class SplashBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Animate(
-            effects: [
-              ShimmerEffect(duration: 3.seconds),
-            ],
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: AppGradients.splashLinearGradient,
-              ),
-            ),
-          ),
-          Center(
-            child: Animate(
+      body: SizedBox(
+        height: MediaQuery.sizeOf(context).height,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Animate(
               effects: [
-                FadeEffect(duration: 600.ms, curve: Curves.easeInOut),
-                ScaleEffect(begin: const Offset(0.4, 0.4), end: const Offset(1.1, 1.1), duration: 900.ms, curve: Curves.easeOutBack),
-                BlurEffect(begin: const Offset(3, 3), end: Offset.zero, duration: 900.ms),
+                ShimmerEffect(duration: 3.seconds),
               ],
-              child: Text(
-                LocaleKeys.app_title.tr(),
-                style: AppTextStyles.font30White700.copyWith(
-                  letterSpacing: 6,
-                  shadows: [
-                    Shadow(
-                      color: Colors.white.withOpacity(0.6),
-                      blurRadius: 25,
-                    ),
-                  ],
+              child: Container(
+                decoration: const BoxDecoration(
+                  gradient: AppGradients.splashLinearGradient,
                 ),
               ),
-            )
-                .animate(onComplete: (c) => c.loop)
-                .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 1200.ms,
-              curve: Curves.easeInOut,
-            ).then()
-                .scale(
-              begin: const Offset(1.05, 1.05),
-              end: const Offset(1, 1),
-              duration: 1200.ms,
-              curve: Curves.easeInOut,
             ),
-          ),
-        ],
+            Center(
+              child: Animate(
+                effects: [
+                  FadeEffect(duration: 600.ms, curve: Curves.easeInOut),
+                  ScaleEffect(begin: const Offset(0.4, 0.4), end: const Offset(1.1, 1.1), duration: 900.ms, curve: Curves.easeOutBack),
+                  BlurEffect(begin: const Offset(3, 3), end: Offset.zero, duration: 900.ms),
+                ],
+                child: Text(
+                  LocaleKeys.app_title.tr(),
+                  style: AppTextStyles.font30White700.copyWith(
+                    letterSpacing: 6,
+                    shadows: [
+                      Shadow(
+                        color: Colors.white.withOpacity(0.6),
+                        blurRadius: 25,
+                      ),
+                    ],
+                  ),
+                ),
+              )
+                  .animate(onComplete: (c) => c.loop)
+                  .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 1200.ms,
+                curve: Curves.easeInOut,
+              ).then()
+                  .scale(
+                begin: const Offset(1.05, 1.05),
+                end: const Offset(1, 1),
+                duration: 1200.ms,
+                curve: Curves.easeInOut,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
