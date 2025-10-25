@@ -18,4 +18,15 @@ abstract class AppGradients {
       Color(0x80F1F1F1),
     ],
   );
+
+  static const splashLinearGradient =
+    LinearGradient(
+      colors: [
+        Color(0xFF7E22CE),
+        Color(0xFF9333EA),
+        Color(0xFFB04BFF),
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    );
 }
