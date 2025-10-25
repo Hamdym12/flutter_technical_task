@@ -12,7 +12,7 @@ class BottomNavScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final valueNotifier = ValueNotifier<int>(0);
-    return ValueListenableBuilder(
+    return  ValueListenableBuilder(
       valueListenable: valueNotifier,
       builder: (context,value,child) {
         return Scaffold(

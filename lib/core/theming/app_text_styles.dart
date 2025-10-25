@@ -122,4 +122,11 @@ abstract class AppTextStyles{
     color: AppColors.placeHolderShadowGray,
     letterSpacing: 0.5,
   );
+
+  static final font12DeepGray600 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.titleDeepGray,
+    letterSpacing: 0.5,
+  );
 }

@@ -34,7 +34,13 @@ class SearchScreen extends StatelessWidget {
                  crossAxisAlignment: CrossAxisAlignment.start,
                  mainAxisAlignment: MainAxisAlignment.start,
                  children: [
-                    const SearchInputsForms(),
+                   BlocBuilder<SearchCubit, SearchState>(
+                     builder: (context,state) {
+                       return SearchInputsForms(
+                        searchCubit: context.read<SearchCubit>(),
+                        );
+                     }
+                   ),
                     Divider(
                       color: AppColors.borderLightGrey,
                       thickness: 1,

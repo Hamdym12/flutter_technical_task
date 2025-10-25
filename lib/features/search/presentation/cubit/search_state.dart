@@ -9,6 +9,7 @@ class SearchState extends Equatable {
   final int guestAdultCounter;
   final int guestChildCounter;
   final ViewType viewType;
+  final String? selectedCategory;
 
   const SearchState({
     this.guestAdultCounter = 0,
@@ -18,6 +19,7 @@ class SearchState extends Equatable {
     this.isDatePickerOpen = false,
     this.isGuestPickerOpen = false,
     this.viewType = ViewType.list,
+    this.selectedCategory,
   });
 
   @override
@@ -29,6 +31,7 @@ class SearchState extends Equatable {
     guestAdultCounter,
     guestChildCounter,
     viewType,
+    selectedCategory,
   ];
 
   String get formattedGuestTitle {
@@ -57,6 +60,7 @@ class SearchState extends Equatable {
     int? guestAdultCounter,
     int? guestChildCounter,
     ViewType? viewType,
+    String? selectedCategory,
   }) {
     return SearchState(
       selectedCity: selectedCity ?? this.selectedCity,
@@ -66,6 +70,7 @@ class SearchState extends Equatable {
       guestAdultCounter: guestAdultCounter ?? this.guestAdultCounter,
       guestChildCounter: guestChildCounter ?? this.guestChildCounter,
       viewType: viewType ?? this.viewType,
+      selectedCategory: selectedCategory ?? this.selectedCategory,
     );
   }
 }
@@ -79,5 +84,6 @@ class SearchInitialState extends SearchState {
     super.guestAdultCounter,
     super.guestChildCounter,
     super.viewType,
+    super.selectedCategory,
   });
 }

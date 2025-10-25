@@ -8,15 +8,17 @@ import 'package:flutter_technical_task/core/localization/locale_keys.g.dart';
 import 'package:flutter_technical_task/core/theming/app_colors.dart';
 import 'package:flutter_technical_task/core/theming/app_text_styles.dart';
 
-class SearchTextField extends StatelessWidget {
+class AppTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? hintText;
   final VoidCallback? onFilterTap;
   final ValueChanged<String>? onChanged;
   final bool? readOnly;
   final Function()? onTap;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
 
-  const SearchTextField({
+  const AppTextField({
     super.key,
     this.controller,
     this.hintText,
@@ -24,6 +26,8 @@ class SearchTextField extends StatelessWidget {
     this.onChanged,
     this.readOnly,
     this.onTap,
+    this.suffixIcon,
+    this.prefixIcon,
   });
 
   @override
@@ -48,7 +52,7 @@ class SearchTextField extends StatelessWidget {
           padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w).copyWith(
             end: 6.w
           ),
-          child: SvgPicture.asset(
+          child: prefixIcon??SvgPicture.asset(
             AppAssets.searchSVG
           ),
         ),
@@ -64,7 +68,7 @@ class SearchTextField extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.all(12),
-              child: SvgPicture.asset(AppAssets.equalizerSVG),
+              child: suffixIcon??SvgPicture.asset(AppAssets.equalizerSVG),
             ),
           ),
         ),

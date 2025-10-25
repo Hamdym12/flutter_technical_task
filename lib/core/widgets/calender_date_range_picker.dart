@@ -59,10 +59,10 @@ class _CalenderDateRangePickerState extends State<CalenderDateRangePicker> {
         backgroundColor: AppColors.white,
          textAlign: TextAlign.center,
       ),
-      initialSelectedRange: PickerDateRange(
-        DateTime.now(),
-        DateTime.now().add(const Duration(days: 5)),
-      ),
+      // initialSelectedRange: PickerDateRange(
+      //   DateTime.now(),
+      //   DateTime.now().add(const Duration(days: 5)),
+      // ),
       rangeTextStyle: AppTextStyles.font14DeepGray500,
       monthCellStyle: DateRangePickerMonthCellStyle(
          textStyle: AppTextStyles.font14DeepGray500,

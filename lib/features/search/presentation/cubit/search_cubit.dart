@@ -26,12 +26,11 @@ class SearchCubit extends Cubit<SearchState> {
 
   void decrementChildCounter() => emit(state.copyWith(guestChildCounter: state.guestChildCounter-1));
 
+  void resetGuests()=> emit(state.copyWith(guestAdultCounter: 0, guestChildCounter: 0));
 
-  void resetGuests(){
-    emit(state.copyWith(guestAdultCounter: 0, guestChildCounter: 0));
-  }
+  void toggleViewType()=> emit(state.copyWith(viewType: state.viewType == ViewType.map ? ViewType.list : ViewType.map));
 
-  void toggleViewType(){
-    emit(state.copyWith(viewType: state.viewType == ViewType.map ? ViewType.list : ViewType.map));
-  }
+  void selectCategory(String category) => emit(state.copyWith(selectedCategory: category));
+
+
 }
