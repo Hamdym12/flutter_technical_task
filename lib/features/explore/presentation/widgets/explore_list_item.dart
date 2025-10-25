@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
@@ -100,6 +101,14 @@ class ExploreListItem extends StatelessWidget {
           ),
         )
       ],
+    ).animate().fadeIn(
+      duration: 400.ms,
+      curve: Curves.easeInOut
+    ).slideY(
+      begin: 0.02,
+      end: 0,
+      duration: 400.ms,
+      curve: Curves.easeInOut
     );
   }
 }

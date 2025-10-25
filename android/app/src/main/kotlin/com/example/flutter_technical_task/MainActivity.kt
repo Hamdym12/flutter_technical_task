@@ -1,4 +1,4 @@
-package com.example.flutter_technical_task
+package com.perfecttouch.lavescape
 
 import io.flutter.embedding.android.FlutterActivity
 

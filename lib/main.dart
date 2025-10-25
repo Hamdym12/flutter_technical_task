@@ -13,16 +13,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupDependencyInjection();
   await EasyLocalization.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
   await AppConfig.initSystemSettings();
   if(kDebugMode) Bloc.observer = AppBlocObserver();
   runApp(
     const EasyLocalizationConfig(
-      child: ScreenUtilInit(
-        designSize: Size(393, 852),
-        minTextAdapt: true,
-        child: MainApp(),
-      ),
+      child: MainApp(),
     ),
   );
 }

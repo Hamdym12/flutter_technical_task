@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_technical_task/core/constants/app_assets.dart';
@@ -14,17 +16,8 @@ class ItemImagePageview extends StatefulWidget {
 
 class _ItemImagePageviewState extends State<ItemImagePageview> {
   final _pageController = PageController();
-  @override
-  void initState() {
-    super.initState();
-  }
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
 
-  final List<String> simulatedImages = [
+  final List<String> demoImages = [
     AppAssets.horseRidingPng,
     AppAssets.camelRidingPng,
     AppAssets.horseRidingPng,
@@ -32,6 +25,18 @@ class _ItemImagePageviewState extends State<ItemImagePageview> {
     AppAssets.horseRidingPng,
     AppAssets.camelRidingPng,
   ];
+
+  @override
+  void initState() {
+    demoImages.shuffle(Random());
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +52,7 @@ class _ItemImagePageviewState extends State<ItemImagePageview> {
               itemCount: 6,
               itemBuilder: (context,index){
                 return Image.asset(
-                  widget.listIndex == 0?
-                  simulatedImages[index]:
-                  simulatedImages[index].replaceFirst(
-                    AppAssets.horseRidingPng, AppAssets.camelRidingPng
-                  ),
+                  demoImages[index],
                   height: 334.h,
                   width: double.infinity,
                   fit: BoxFit.fill,

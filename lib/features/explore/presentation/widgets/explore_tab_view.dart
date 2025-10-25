@@ -14,7 +14,7 @@ class ExploreTabView extends StatelessWidget {
        controller: tabController,
        children: [
          for(int i = 0; i < item.length; i++)
-           const ExploreItemsListView(hasShimmer: true)
+           ExploreItemsListView(hasShimmer: i == 0 ? false:true)
        ]
       )
     );

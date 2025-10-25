@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_technical_task/core/constants/app_insets.dart';
 import 'package:flutter_technical_task/core/enums/view_type.dart';
+import 'package:flutter_technical_task/core/helpers/toast_helper.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_list_item.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/explore_list_item_shimmer.dart';
 import 'package:flutter_technical_task/features/explore/presentation/widgets/view_switch_button.dart';
@@ -53,7 +54,9 @@ class _ExploreItemsListViewState extends State<ExploreItemsListView> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: ViewSwitchButton(
-                onTap: widget.onViewTypeTap,
+                onTap: widget.onViewTypeTap ?? (){
+                  showToast(message: 'Test in Search Result Screen');
+                },
                 viewType: widget.viewType,
               ),
             ),
